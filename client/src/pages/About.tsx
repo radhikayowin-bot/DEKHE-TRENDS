@@ -1,254 +1,225 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Zap, Award, TrendingUp, Globe, ArrowRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { StickyCallButton } from "@/components/StickyCallButton";
+import { Phone, ArrowRight, Heart, Users, Target, Lightbulb } from "lucide-react";
 
 export default function About() {
   return (
     <>
       <SEO 
-        title="About Us - Market Intelligence & Trend Analysis Experts | Dekhe Trends"
-        description="Learn about Dekhe Trends' mission to decode market chaos and empower brands with data-driven insights. Founded by data scientists and cultural anthropologists."
+        title="About DekheTrends - The Story Behind India's Most Honest Digital Marketing Agency"
+        description="We started DekheTrends because we were tired of seeing businesses get ripped off by agencies that overpromise and underdeliver. Here's our story."
         canonical="https://dekhetrends.com/about"
       />
       
+      <StickyCallButton />
+
       <div className="pt-24 pb-12 min-h-screen">
-        <div className="container px-4 md:px-6">
-          {/* Mission */}
-          <div className="max-w-4xl mx-auto text-center mb-24">
+        <div className="container px-4 md:px-6 max-w-5xl mx-auto">
+          {/* Hero */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-block mb-6 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary font-semibold text-sm">
+              Our Story
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight">
+              We Started This Because We Were <span className="gradient-text">Pissed Off</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              Pissed off at agencies that charge lakhs and deliver nothing. Pissed off at "marketing experts" who've never actually run a business. Pissed off at the whole industry, honestly.
+            </p>
+          </motion.div>
+
+          {/* The Real Story */}
+          <div className="prose prose-lg prose-invert max-w-none mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary font-medium text-sm"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8 text-lg text-muted-foreground leading-relaxed"
             >
-              About Dekhe Trends
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold font-display mb-8"
-            >
-              We Decode the <span className="gradient-text">Chaos</span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
-            >
-              In a world of infinite data, clarity is the ultimate luxury. Dekhe Trends exists to filter the signal from the noise and empower brands to act with conviction, speed, and cultural intelligence.
-            </motion.p>
-          </div>
+              <p className="text-xl">
+                <strong className="text-white">Here's the truth:</strong> DekheTrends wasn't born in some fancy boardroom with a "vision statement" and a PowerPoint deck.
+              </p>
 
-          {/* Story */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24 items-center">
-            <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl aspect-square flex items-center justify-center border border-accent/30 relative overflow-hidden">
-              <div className="absolute inset-0 bg-grid-white/[0.02]" />
-              <div className="relative z-10 text-center p-8">
-                <TrendingUp className="w-24 h-24 text-white/30 mx-auto mb-4" />
-                <span className="text-4xl font-bold text-white/30 font-display">Dekhe Trends</span>
+              <p>
+                It started in 2019 when I (Rahul, founder) was running a small e-commerce business selling handmade leather goods. Business was okay, but I knew we could do better. So I hired a "top-rated" digital marketing agency.
+              </p>
+
+              <p>
+                They charged me ₹50,000 a month. Promised me the moon. "We'll 10X your revenue in 3 months," they said. "We're experts in e-commerce," they said.
+              </p>
+
+              <p className="text-xl font-semibold text-white">
+                Six months later, I had spent ₹3 lakhs and gotten exactly 12 sales from their campaigns.
+              </p>
+
+              <p>
+                When I asked for explanations, I got jargon. "Your CTR is improving." "Brand awareness takes time." "The algorithm needs to learn." Basically, a bunch of excuses wrapped in marketing speak.
+              </p>
+
+              <p>
+                That's when I realized: <strong className="text-white">most agencies don't actually care if you succeed.</strong> They care about keeping you on retainer long enough to hit their quarterly targets.
+              </p>
+
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 my-12">
+                <p className="text-xl font-bold text-white mb-4">So I fired them and learned to do it myself.</p>
+                <p>
+                  I spent 6 months learning Google Ads, Facebook Ads, SEO, email marketing—everything. I made mistakes. Lots of them. Burned through another ₹2 lakhs in ad spend figuring out what actually works.
+                </p>
+                <p className="mt-4">
+                  But eventually, I cracked it. Within a year, my business was doing ₹15 lakhs a month in revenue. All from digital marketing that I was running myself.
+                </p>
               </div>
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">Our Story</h2>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                Founded in 2021 by a team of data scientists and cultural anthropologists, Dekhe Trends started with a simple question: <span className="text-white font-semibold">"Why do most trend reports fail?"</span>
+
+              <p>
+                Word got around. Other business owners started asking me for help. "Can you run my ads?" "Can you fix my website?" "Can you teach me SEO?"
               </p>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                The answer was context. Data without culture is just numbers. Culture without data is just guessing. We built a proprietary intelligence engine that merges both, giving our clients a 360-degree view of what's next.
+
+              <p>
+                I started helping a few friends. Then friends of friends. Then strangers who found me through referrals. Before I knew it, I was running marketing for 20+ businesses and my leather goods business was taking a backseat.
               </p>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                Today, we work with over 200 brands across fashion, tech, beauty, and D2C sectors, helping them spot trends before they become mainstream and make strategic decisions with confidence.
+
+              <p className="text-xl font-semibold text-white">
+                That's when DekheTrends was born. Not as a "marketing agency," but as a promise:
               </p>
-              <Link href="/contact">
-                <Button className="rounded-full bg-gradient-to-r from-primary to-accent text-white hover:from-primary/90 hover:to-accent/90 font-semibold">
-                  Work With Us <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
+
+              <div className="p-8 rounded-2xl bg-card border border-accent/20 my-12">
+                <p className="text-2xl font-bold text-primary mb-6">
+                  "We'll treat your business like it's our own. We'll be honest about what works and what doesn't. And if we can't help you, we'll tell you upfront."
+                </p>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Mission & Vision */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
-              <Target className="w-12 h-12 text-primary mb-6" />
-              <h2 className="text-2xl md:text-3xl font-bold font-display mb-4">Our Mission</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                To democratize market intelligence and make world-class trend analysis accessible to brands of all sizes. We believe every business deserves the insights that were once only available to Fortune 500 companies.
-              </p>
-            </div>
-            
-            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20">
-              <Globe className="w-12 h-12 text-accent mb-6" />
-              <h2 className="text-2xl md:text-3xl font-bold font-display mb-4">Our Vision</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                To become the global standard for real-time market intelligence. We're building a future where businesses don't just react to trends—they anticipate them, shape them, and lead their industries.
-              </p>
-            </div>
-          </div>
-
-          {/* Values */}
-          <div className="mb-24">
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 text-center">Our Core Values</h2>
-            <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-              These principles guide everything we do, from how we analyze data to how we work with clients.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { 
-                  icon: Award,
-                  title: "Radical Truth", 
-                  desc: "We tell you what the data says, not what you want to hear. Our insights are honest, unfiltered, and actionable—even when the truth is uncomfortable." 
-                },
-                { 
-                  icon: Zap,
-                  title: "Speed Matters", 
-                  desc: "Insights have a shelf life. In fast-moving markets, being right tomorrow is the same as being wrong today. We deliver faster than anyone else." 
-                },
-                { 
-                  icon: Users,
-                  title: "Context is King", 
-                  desc: "A number means nothing without the human story behind it. We don't just show you what's trending—we explain why it matters and what to do about it." 
-                }
-              ].map((value, i) => (
-                <motion.div 
-                  key={i} 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-8 bg-gradient-to-br from-card to-card/50 border border-accent/20 hover:border-primary/50 rounded-2xl transition-all group"
-                >
-                  <value.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-bold mb-4 font-display text-primary">{value.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{value.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Team Section */}
-          <div className="mb-24">
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 text-center">Meet Our Team</h2>
-            <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-              A diverse group of data scientists, cultural anthropologists, strategists, and creatives united by one goal: helping brands win.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { name: "Dr. Priya Sharma", role: "Founder & Chief Analyst", specialty: "Predictive Analytics" },
-                { name: "Marcus Chen", role: "Head of Data Science", specialty: "Machine Learning" },
-                { name: "Sofia Rodriguez", role: "Cultural Strategist", specialty: "Consumer Behavior" },
-                { name: "James Wilson", role: "VP of Client Success", specialty: "Growth Strategy" },
-              ].map((member, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 mb-4 flex items-center justify-center border border-accent/30">
-                    <Users className="w-16 h-16 text-white/30" />
-                  </div>
-                  <h3 className="text-lg font-bold font-display mb-1">{member.name}</h3>
-                  <p className="text-sm text-primary mb-2">{member.role}</p>
-                  <p className="text-xs text-muted-foreground">{member.specialty}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 md:p-16 border border-primary/20 mb-24">
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-12 text-center">By the Numbers</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { number: "200+", label: "Brands Served" },
-                { number: "93%", label: "Prediction Accuracy" },
-                { number: "10x", label: "Average ROI" },
-                { number: "24/7", label: "Market Monitoring" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="text-4xl md:text-5xl font-bold font-display text-primary mb-2">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Methodology */}
-          <div className="mb-24">
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 text-center">Our Methodology</h2>
-            <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-              We've developed a proprietary 4-layer intelligence system that combines technology with human expertise.
-            </p>
+          {/* What We Believe */}
+          <div className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-12 text-center">
+              What We Actually Believe
+            </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  title: "Layer 1: Data Collection",
-                  desc: "Our AI-powered systems monitor millions of data points across social media, search engines, e-commerce platforms, and cultural forums in real-time."
+                  icon: Heart,
+                  title: "Honesty Over Everything",
+                  description: "If your product sucks, no amount of marketing will save you. We'll tell you the truth, even if it means losing a client. Your success matters more than our retainer."
                 },
                 {
-                  title: "Layer 2: Pattern Recognition",
-                  desc: "Machine learning algorithms identify emerging patterns, anomalies, and signals that indicate shifting consumer behaviors and market dynamics."
+                  icon: Target,
+                  title: "Results Are All That Matter",
+                  description: "We don't care about 'brand awareness' or 'engagement rates.' We care about one thing: Are you making more money than you're spending? If not, we're failing."
                 },
                 {
-                  title: "Layer 3: Cultural Analysis",
-                  desc: "Our team of cultural anthropologists and strategists interpret the data through a human lens, adding context, nuance, and cultural intelligence."
+                  icon: Users,
+                  title: "Small Teams, Big Impact",
+                  description: "We're not a 100-person agency. We're a tight-knit team of 12 people who actually give a damn. You'll never be 'just another client' to us."
                 },
                 {
-                  title: "Layer 4: Strategic Translation",
-                  desc: "We translate insights into actionable strategies tailored to your brand, industry, and business objectives—complete with implementation roadmaps."
+                  icon: Lightbulb,
+                  title: "No BS, No Jargon",
+                  description: "We explain things in plain English. If you don't understand something, that's on us, not you. Marketing isn't rocket science—it's just been made complicated by people trying to sound smart."
                 }
-              ].map((layer, i) => (
+              ].map((belief, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-8 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-accent/20 hover:border-primary/50 transition-all"
+                  className="p-8 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-accent/20"
                 >
-                  <h3 className="text-xl font-bold font-display mb-3 text-primary">{layer.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{layer.desc}</p>
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                    <belief.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">{belief.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{belief.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="text-center bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-12 md:p-16 border border-primary/20">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">Ready to Work Together?</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our intelligence services can help your brand stay ahead of the curve and win in your market.
+          {/* The Team Reality */}
+          <div className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-8 text-center">
+              Meet the Team (The Real Version)
+            </h2>
+            <p className="text-xl text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
+              No corporate headshots. No fake bios. Just real people who are really good at what they do.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/audit">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-gradient-to-r from-primary to-accent text-white hover:from-primary/90 hover:to-accent/90 font-bold shadow-[0_0_30px_rgba(168,85,247,0.4)]">
-                  Start Free Audit
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-2 border-primary/50 hover:bg-primary/10 font-semibold">
-                  Get in Touch
-                </Button>
-              </Link>
+
+            <div className="prose prose-lg prose-invert max-w-none">
+              <div className="p-8 rounded-2xl bg-card border border-accent/20 mb-8">
+                <h3 className="text-2xl font-bold mb-4">Rahul Sharma - Founder</h3>
+                <p className="text-muted-foreground">
+                  Started as an e-commerce seller who got burned by bad agencies. Now helps other businesses avoid the same mistakes. Still drinks too much coffee and replies to client messages at 11 PM because he can't help himself.
+                </p>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-card border border-accent/20 mb-8">
+                <h3 className="text-2xl font-bold mb-4">Priya Mehta - Head of SEO</h3>
+                <p className="text-muted-foreground">
+                  Former journalist who got tired of writing fluff pieces. Now writes content that actually ranks and converts. Has an unhealthy obsession with Google algorithm updates and can spot keyword stuffing from a mile away.
+                </p>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-card border border-accent/20 mb-8">
+                <h3 className="text-2xl font-bold mb-4">Arjun Patel - Ads Specialist</h3>
+                <p className="text-muted-foreground">
+                  Spent 5 years at a big agency before realizing he hated the corporate BS. Joined us because he wanted to actually help businesses grow instead of just hitting arbitrary KPIs. Has a weird talent for writing ad copy that converts.
+                </p>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-card border border-accent/20">
+                <h3 className="text-2xl font-bold mb-4">The Rest of the Crew</h3>
+                <p className="text-muted-foreground">
+                  We've got designers, developers, social media managers, and content writers. All of them are freelancers or small business owners themselves, so they understand what you're going through. No corporate drones here.
+                </p>
+              </div>
             </div>
+          </div>
+
+          {/* Why Work With Us */}
+          <div className="mb-20">
+            <div className="p-12 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+                Why Should You Work With Us?
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+                Because we've been where you are. We know what it's like to invest in marketing and pray it works. We know the stress of watching your ad budget disappear with nothing to show for it.
+              </p>
+              <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+                We're not perfect. We make mistakes. But when we do, we own up to it, fix it, and make sure it doesn't happen again. That's the difference.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:8077583921">
+                  <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-white text-black hover:bg-gray-100 font-bold">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call: 8077583921
+                  </Button>
+                </a>
+                <Link href="/audit">
+                  <Button size="lg" variant="outline" className="h-16 px-10 text-lg rounded-full border-2 border-white/50 hover:bg-white/10 font-semibold">
+                    Get Free Audit
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Final Note */}
+          <div className="text-center">
+            <p className="text-lg text-muted-foreground italic">
+              P.S. - If you've read this far, you're probably the kind of business owner we love working with. Someone who actually cares about their business and isn't just looking for a quick fix. Let's talk.
+            </p>
           </div>
         </div>
       </div>
