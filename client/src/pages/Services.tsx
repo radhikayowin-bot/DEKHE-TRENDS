@@ -1,366 +1,451 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { 
-  ArrowRight, BarChart3, Search, TrendingUp, Users, Globe, Zap, 
-  Target, Megaphone, Share2, Mail, UserPlus, ShoppingCart, 
-  RefreshCw, FileSearch, Cpu, Store, MessageCircle, Video, 
-  Database, AlertTriangle, Palette, LineChart
-} from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { StickyCallButton } from "@/components/StickyCallButton";
+import { 
+  Phone, ArrowRight, Search, Target, MessageSquare, 
+  TrendingUp, BarChart3, Globe, CheckCircle2, AlertCircle
+} from "lucide-react";
 
 export default function Services() {
-  const services = [
-    {
-      id: "trend-reporting",
-      icon: TrendingUp,
-      title: "Trend Reporting (TRaaS)",
-      desc: "Stay ahead of the curve with our monthly subscription. We identify micro-trends in your niche before they hit mainstream.",
-      features: ["Monthly Trend Decks", "Consumer Behavior Shifts", "Viral Audio & Content Templates", "Predictive Analytics"],
-      href: "/services/trend-reporting"
-    },
-    {
-      id: "competitor-intelligence",
-      icon: Search,
-      title: "Competitor Intelligence",
-      desc: "Deep-dive analysis of your top 5 competitors. We reverse-engineer their growth strategies so you can outperform them.",
-      features: ["Ad Spend Analysis", "Creative Strategy Audit", "Gap Analysis", "Market Positioning"],
-      href: "/services/competitor-intelligence"
-    },
-    {
-      id: "product-validation",
-      icon: Target,
-      title: "Product Validation",
-      desc: "Stop guessing. We test your product concepts against real-time social sentiment data to predict success.",
-      features: ["Sentiment Analysis", "Demand Forecasting", "Feature Prioritization", "Market Fit Testing"],
-      href: "/services/product-validation"
-    },
-    {
-      id: "growth-strategy",
-      icon: Zap,
-      title: "Growth Strategy",
-      desc: "Actionable roadmaps to scale. We combine data with creativity to build campaigns that convert.",
-      features: ["Go-to-Market Plans", "Channel Strategy", "Retention Frameworks", "Scaling Blueprints"],
-      href: "/services/growth-strategy"
-    },
-    {
-      id: "brand-strategy",
-      icon: Palette,
-      title: "Brand Strategy",
-      desc: "Build a brand that resonates. We help you define your positioning, voice, and visual identity.",
-      features: ["Brand Positioning", "Voice & Tone Guidelines", "Visual Identity", "Brand Architecture"],
-      href: "/services/brand-strategy"
-    },
-    {
-      id: "content-marketing",
-      icon: Megaphone,
-      title: "Content Marketing",
-      desc: "Create content that converts. From strategy to execution, we help you tell stories that sell.",
-      features: ["Content Strategy", "Editorial Calendars", "SEO Optimization", "Performance Tracking"],
-      href: "/services/content-marketing"
-    },
-    {
-      id: "social-media-strategy",
-      icon: Share2,
-      title: "Social Media Strategy",
-      desc: "Master the algorithm. We build social strategies that drive engagement, followers, and revenue.",
-      features: ["Platform Strategy", "Content Calendars", "Community Management", "Influencer Partnerships"],
-      href: "/services/social-media-strategy"
-    },
-    {
-      id: "seo-strategy",
-      icon: Globe,
-      title: "SEO Strategy",
-      desc: "Rank higher, convert better. Our SEO strategies are built on data, not guesswork.",
-      features: ["Technical SEO", "Keyword Research", "Link Building", "Content Optimization"],
-      href: "/services/seo-strategy"
-    },
-    {
-      id: "email-marketing",
-      icon: Mail,
-      title: "Email Marketing",
-      desc: "Turn subscribers into customers. We design email campaigns that people actually want to read.",
-      features: ["Campaign Strategy", "Automation Flows", "List Segmentation", "A/B Testing"],
-      href: "/services/email-marketing"
-    },
-    {
-      id: "influencer-marketing",
-      icon: UserPlus,
-      title: "Influencer Marketing",
-      desc: "Partner with the right voices. We connect you with influencers who align with your brand values.",
-      features: ["Influencer Vetting", "Campaign Management", "Performance Tracking", "ROI Analysis"],
-      href: "/services/influencer-marketing"
-    },
-    {
-      id: "paid-advertising",
-      icon: ShoppingCart,
-      title: "Paid Advertising",
-      desc: "Maximize your ad spend. We create high-converting campaigns across all major platforms.",
-      features: ["Media Buying", "Creative Testing", "Audience Targeting", "Performance Optimization"],
-      href: "/services/paid-advertising"
-    },
-    {
-      id: "conversion-optimization",
-      icon: LineChart,
-      title: "Conversion Optimization",
-      desc: "Turn traffic into revenue. We optimize every touchpoint in your customer journey.",
-      features: ["CRO Audits", "A/B Testing", "User Experience", "Funnel Optimization"],
-      href: "/services/conversion-optimization"
-    },
-    {
-      id: "customer-retention",
-      icon: RefreshCw,
-      title: "Customer Retention",
-      desc: "Keep customers coming back. We build loyalty programs and retention strategies that work.",
-      features: ["Loyalty Programs", "Retention Analytics", "Churn Prevention", "Lifecycle Marketing"],
-      href: "/services/customer-retention"
-    },
-    {
-      id: "market-research",
-      icon: FileSearch,
-      title: "Market Research",
-      desc: "Know your market inside out. We conduct comprehensive research to inform your strategy.",
-      features: ["Consumer Insights", "Market Sizing", "Competitive Analysis", "Trend Forecasting"],
-      href: "/services/market-research"
-    },
-    {
-      id: "digital-transformation",
-      icon: Cpu,
-      title: "Digital Transformation",
-      desc: "Modernize your business. We help traditional brands navigate the digital landscape.",
-      features: ["Technology Audits", "Process Optimization", "Digital Strategy", "Change Management"],
-      href: "/services/digital-transformation"
-    },
-    {
-      id: "ecommerce-strategy",
-      icon: Store,
-      title: "E-commerce Strategy",
-      desc: "Sell more online. We optimize every aspect of your e-commerce operation.",
-      features: ["Platform Selection", "UX Optimization", "Payment Strategy", "Logistics Planning"],
-      href: "/services/ecommerce-strategy"
-    },
-    {
-      id: "community-building",
-      icon: MessageCircle,
-      title: "Community Building",
-      desc: "Build a tribe, not just an audience. We help you create engaged communities around your brand.",
-      features: ["Community Strategy", "Platform Selection", "Engagement Programs", "Moderation Guidelines"],
-      href: "/services/community-building"
-    },
-    {
-      id: "video-marketing",
-      icon: Video,
-      title: "Video Marketing",
-      desc: "Tell your story visually. We create video strategies that capture attention and drive action.",
-      features: ["Video Strategy", "Platform Optimization", "Content Production", "Performance Analytics"],
-      href: "/services/video-marketing"
-    },
-    {
-      id: "data-analytics",
-      icon: Database,
-      title: "Data Analytics",
-      desc: "Make data-driven decisions. We turn raw data into actionable insights.",
-      features: ["Analytics Setup", "Dashboard Creation", "Reporting Automation", "Predictive Modeling"],
-      href: "/services/data-analytics"
-    },
-    {
-      id: "crisis-management",
-      icon: AlertTriangle,
-      title: "Crisis Management",
-      desc: "Protect your reputation. We help you navigate PR crises with confidence and clarity.",
-      features: ["Crisis Planning", "Response Strategy", "Media Training", "Reputation Recovery"],
-      href: "/services/crisis-management"
-    },
-  ];
-
   return (
     <>
       <SEO 
-        title="Our Services - Comprehensive Marketing Solutions | Dekhe Trends"
-        description="Explore our full suite of marketing and business intelligence services. From trend reporting to crisis management, we help brands stay ahead of the curve."
+        title="Digital Marketing Services That Actually Work | DekheTrends"
+        description="No fluff, no jargon. Just proven digital marketing services that bring customers to your door. SEO, Google Ads, Social Media, and more."
         canonical="https://dekhetrends.com/services"
       />
       
+      <StickyCallButton />
+
       <div className="pt-24 pb-12 min-h-screen">
-        <div className="container px-4 md:px-6">
-          {/* Hero Section */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-block mb-6 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary font-medium text-sm"
-            >
-              20+ Specialized Services
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold font-display mb-6"
-            >
-              Our <span className="gradient-text">Expertise</span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-muted-foreground leading-relaxed"
-            >
-              We offer a comprehensive suite of intelligence products and marketing services designed to de-risk your decisions, accelerate growth, and keep you ahead of market trends. Each service is backed by data, powered by creativity, and delivered with precision.
-            </motion.p>
-          </div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                viewport={{ once: true }}
-              >
-                <Link href={service.href}>
-                  <div className="h-full p-8 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-accent/20 hover:border-primary/50 transition-all group cursor-pointer">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
-                      <service.icon className="w-7 h-7" />
-                    </div>
-                    
-                    <h3 className="text-xl font-bold font-display mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-6 leading-relaxed line-clamp-3">
-                      {service.desc}
-                    </p>
-                    
-                    <ul className="space-y-2 mb-6">
-                      {service.features.slice(0, 3).map((feature) => (
-                        <li key={feature} className="flex items-center text-xs font-medium text-muted-foreground">
-                          <div className="w-1 h-1 rounded-full bg-accent mr-2" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <div className="flex items-center text-sm font-semibold text-primary group-hover:text-white transition-colors">
-                      Learn More <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Process Section */}
-          <div className="bg-white/[0.02] rounded-3xl p-8 md:p-16 border border-white/5 mb-24">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-4 text-center">How We Work</h2>
-            <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
-              Our proven methodology ensures every project delivers measurable results and actionable insights.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { 
-                  step: "01", 
-                  title: "Discovery", 
-                  desc: "We audit your current position, analyze your market, and define clear, measurable objectives aligned with your business goals." 
-                },
-                { 
-                  step: "02", 
-                  title: "Tracking", 
-                  desc: "Our proprietary systems begin monitoring millions of data points across social platforms, search engines, and market signals." 
-                },
-                { 
-                  step: "03", 
-                  title: "Insight", 
-                  desc: "Expert analysts distill noise into clear, actionable patterns. We combine AI-powered analysis with human cultural intelligence." 
-                },
-                { 
-                  step: "04", 
-                  title: "Action", 
-                  desc: "We deliver comprehensive roadmaps with prioritized recommendations. You execute with confidence, we support every step." 
-                },
-              ].map((item, i) => (
-                <motion.div 
-                  key={i} 
-                  className="relative"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="text-7xl font-bold text-white/5 font-display mb-4 absolute -top-8 -left-4 z-0">
-                    {item.step}
-                  </div>
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-bold mb-3 font-display text-primary">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+        <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+          {/* Hero */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-block mb-6 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary font-semibold text-sm">
+              Our Services
             </div>
-          </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight">
+              Marketing Services That <span className="gradient-text">Actually Deliver</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+              We don't do "brand awareness" campaigns. We do campaigns that bring you customers, sales, and revenue. Here's exactly what we offer and how we do it.
+            </p>
 
-          {/* FAQ Section */}
-          <div className="max-w-4xl mx-auto mb-24">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-12 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
+            <a href="tel:8077583921">
+              <Button size="lg" className="h-14 px-8 rounded-full bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 font-bold">
+                <Phone className="w-5 h-5 mr-2" />
+                Call: 8077583921
+              </Button>
+            </a>
+          </motion.div>
+
+          {/* SEO Service */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-card to-card/50 border border-accent/20"
+          >
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Search className="w-8 h-8 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold font-display mb-3">SEO (Search Engine Optimization)</h2>
+                <p className="text-xl text-muted-foreground">Get found by people who are actively searching for what you sell</p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  What Exactly We Do
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  We make your website show up on Google when people search for products or services like yours. Not on page 5. On page 1, in the top 3 results.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  <strong className="text-white">Real example:</strong> A Mumbai-based interior designer was getting 2-3 inquiries a month from Google. After 4 months of SEO work, they're now getting 40-50 inquiries monthly. Same business, same services—just better visibility.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  How We Do It (Step-by-Step)
+                </h3>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Month 1: Foundation</p>
+                    <p className="text-muted-foreground">We audit your website, fix technical issues, research what your customers are actually searching for, and create a keyword strategy. No guesswork—we use real search data.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Month 2-3: Content & Optimization</p>
+                    <p className="text-muted-foreground">We optimize your existing pages and create new content targeting high-value keywords. Every piece is written for humans first, search engines second.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Month 4-6: Authority Building</p>
+                    <p className="text-muted-foreground">We build high-quality backlinks from relevant websites. No spam, no shortcuts. Just legitimate links that Google actually values.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Ongoing: Monitoring & Improvement</p>
+                    <p className="text-muted-foreground">We track rankings, traffic, and conversions. If something's not working, we pivot. If something's working well, we double down on it.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  Real Expected Outcomes
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="text-2xl font-bold text-green-500 mb-2">3-6 Months</p>
+                    <p className="text-sm text-muted-foreground">First page rankings for 5-10 keywords, 2-3X increase in organic traffic</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="text-2xl font-bold text-green-500 mb-2">6-12 Months</p>
+                    <p className="text-sm text-muted-foreground">Top 3 rankings for main keywords, 5-10X traffic increase, steady lead flow</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="text-2xl font-bold text-green-500 mb-2">12+ Months</p>
+                    <p className="text-sm text-muted-foreground">Dominant market position, consistent 50-100+ leads monthly from organic search</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  Who This Is Best For
+                </h3>
+                <div className="space-y-3">
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">Local businesses</strong> (restaurants, salons, clinics, gyms) who want customers in their area</span>
+                  </p>
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">Service providers</strong> (lawyers, consultants, agencies) who need a steady stream of inquiries</span>
+                  </p>
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">E-commerce stores</strong> who want to reduce dependency on paid ads</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-yellow-500 mb-2">Important: SEO Takes Time</p>
+                    <p className="text-muted-foreground">If someone promises you "first page rankings in 30 days," they're lying. Good SEO takes 3-6 months minimum. Anyone who says otherwise is either using black-hat tactics (which will get you penalized) or just taking your money.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Paid Advertising Service */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-card to-card/50 border border-accent/20"
+          >
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Target className="w-8 h-8 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold font-display mb-3">Google & Facebook Ads</h2>
+                <p className="text-xl text-muted-foreground">Stop burning money on ads that don't convert</p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  What Exactly We Do
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  We run Google Ads, Facebook Ads, and Instagram campaigns that actually generate sales—not just clicks and impressions.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  <strong className="text-white">Real example:</strong> An online clothing store was spending ₹80,000/month on Facebook ads and getting a 1.5X return. We took over, restructured everything, and now they're spending ₹1,20,000/month but getting a 5.2X return. More spend, but way more profit.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  How We Do It
+                </h3>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Week 1: Research & Strategy</p>
+                    <p className="text-muted-foreground">We study your competitors' ads, analyze your target audience, and create a campaign strategy. We also audit your website to make sure it can actually convert the traffic we send.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Week 2-3: Campaign Setup & Testing</p>
+                    <p className="text-muted-foreground">We create multiple ad variations, set up proper tracking, and launch campaigns with a conservative budget. We test different audiences, ad copy, and creatives to see what works.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Week 4+: Optimization & Scaling</p>
+                    <p className="text-muted-foreground">We kill what's not working, double down on what is, and gradually increase budget on winning campaigns. Every rupee is tracked and accounted for.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  Real Expected Outcomes
+                </h3>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="font-semibold text-white mb-2">Month 1: Testing Phase</p>
+                    <p className="text-muted-foreground">2-3X ROAS (Return on Ad Spend). We're still figuring out what works, so returns are modest but positive.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="font-semibold text-white mb-2">Month 2-3: Optimization Phase</p>
+                    <p className="text-muted-foreground">4-5X ROAS. We've identified winning campaigns and are scaling them up while cutting losers.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="font-semibold text-white mb-2">Month 4+: Scaling Phase</p>
+                    <p className="text-muted-foreground">5-7X ROAS consistently. At this point, ads are a reliable revenue channel, not a gamble.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  Who This Is Best For
+                </h3>
+                <div className="space-y-3">
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">E-commerce businesses</strong> who need immediate sales and can't wait for SEO</span>
+                  </p>
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">Service businesses</strong> with high-ticket offerings (coaching, consulting, B2B services)</span>
+                  </p>
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">Local businesses</strong> who want to dominate their area quickly</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-yellow-500 mb-2">Minimum Ad Budget Required</p>
+                    <p className="text-muted-foreground">You need at least ₹30,000-50,000/month in ad spend to see meaningful results. Less than that and we're just testing with no room to scale. If your budget is lower, focus on SEO first.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Social Media Service */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-card to-card/50 border border-accent/20"
+          >
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <MessageSquare className="w-8 h-8 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold font-display mb-3">Social Media Marketing</h2>
+                <p className="text-xl text-muted-foreground">Turn followers into paying customers</p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  What Exactly We Do
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  We build and manage your Instagram, Facebook, and LinkedIn presence. But we don't just post pretty pictures—we create content that actually drives business results.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  <strong className="text-white">Real example:</strong> A fitness coach had 3,000 Instagram followers but was getting maybe 1-2 clients a month from it. We revamped their content strategy, and now they're getting 15-20 inquiries monthly from Instagram alone. Same follower count, completely different results.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  How We Do It
+                </h3>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Content Strategy</p>
+                    <p className="text-muted-foreground">We create a content calendar that mixes educational posts, behind-the-scenes content, customer stories, and direct offers. Every post has a purpose—not just "engagement."</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Content Creation</p>
+                    <p className="text-muted-foreground">We write captions, design graphics, and edit videos. You provide raw material (photos, videos, ideas), we turn it into scroll-stopping content.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Community Management</p>
+                    <p className="text-muted-foreground">We respond to comments and DMs (within reason—we're not your 24/7 customer service). We also engage with your target audience to increase visibility.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-background/50 border border-white/10">
+                    <p className="font-semibold text-white mb-2">Performance Tracking</p>
+                    <p className="text-muted-foreground">We track what content drives the most inquiries and sales, then create more of that. Simple.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  Real Expected Outcomes
+                </h3>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="font-semibold text-white mb-2">Month 1-2</p>
+                    <p className="text-muted-foreground">Content quality improves dramatically, engagement increases 2-3X, first few inquiries start coming in</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="font-semibold text-white mb-2">Month 3-6</p>
+                    <p className="text-muted-foreground">Consistent 10-20 inquiries monthly, follower growth accelerates, social media becomes a reliable lead source</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                    <p className="font-semibold text-white mb-2">Month 6+</p>
+                    <p className="text-muted-foreground">30-50+ inquiries monthly, strong brand presence, customers finding you through social media regularly</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-green-500" />
+                  Who This Is Best For
+                </h3>
+                <div className="space-y-3">
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">Visual businesses</strong> (fashion, food, beauty, fitness, interior design)</span>
+                  </p>
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">Personal brands</strong> (coaches, consultants, freelancers, creators)</span>
+                  </p>
+                  <p className="text-lg text-muted-foreground flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span><strong className="text-white">Local businesses</strong> who want to build community and trust</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-yellow-500 mb-2">Social Media Isn't Magic</p>
+                    <p className="text-muted-foreground">If your product or service sucks, social media won't save you. We can make you look good online, but we can't fix fundamental business problems. Make sure your offering is solid first.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Other Services Quick Overview */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-8 text-center">
+              Other Services We Offer
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 {
-                  q: "How do I choose the right service for my business?",
-                  a: "Start with our free audit. We'll assess your current position and recommend the services that will have the biggest impact on your growth."
+                  icon: Globe,
+                  title: "Website Design & Development",
+                  description: "We build websites that actually convert visitors into customers. No fancy animations that slow everything down—just clean, fast, conversion-focused design."
                 },
                 {
-                  q: "Can I combine multiple services?",
-                  a: "Absolutely! Most of our clients use a combination of services. We offer bundled packages that provide better value and integrated strategies."
+                  icon: BarChart3,
+                  title: "Conversion Rate Optimization",
+                  description: "Your website is getting traffic but not sales? We analyze user behavior, identify bottlenecks, and fix them. Small changes, big impact."
                 },
                 {
-                  q: "What's the typical timeline for results?",
-                  a: "It varies by service. Trend reporting delivers monthly insights, while brand strategy projects typically take 6-8 weeks. We'll provide a detailed timeline during discovery."
+                  icon: TrendingUp,
+                  title: "Email Marketing",
+                  description: "Build a list, nurture it, and turn subscribers into customers. We set up automated email sequences that sell while you sleep."
                 },
                 {
-                  q: "Do you work with startups or only established brands?",
-                  a: "We work with both! Our services are scalable and can be tailored to businesses at any stage, from pre-launch startups to Fortune 500 companies."
-                },
-                {
-                  q: "What makes your approach different?",
-                  a: "We combine AI-powered data analysis with human cultural intelligence. Algorithms find patterns, but humans find meaning. This hybrid approach delivers insights that are both accurate and actionable."
+                  icon: MessageSquare,
+                  title: "Content Marketing",
+                  description: "Blogs, videos, podcasts—whatever format works for your audience. We create content that educates, entertains, and ultimately sells."
                 }
-              ].map((faq, i) => (
-                <motion.div
+              ].map((service, i) => (
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-accent/20"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-card to-card/50 border border-accent/20 hover:border-primary/50 transition-all"
                 >
-                  <h3 className="text-lg font-bold mb-3 font-display">{faq.q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-                </motion.div>
+                  <service.icon className="w-10 h-10 text-primary mb-4" />
+                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* CTA Section */}
-          <div className="text-center bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-12 md:p-16 border border-primary/20">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">Ready to Get Started?</h2>
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center p-12 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+              Not Sure Which Service You Need?
+            </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Get a complimentary audit of your brand's current market positioning. We'll identify opportunities and recommend the best path forward.
+              Call us. We'll have an honest conversation about your business, your goals, and what will actually work for you. No sales pitch, just real advice.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/audit">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-gradient-to-r from-primary to-accent text-white hover:from-primary/90 hover:to-accent/90 font-bold shadow-[0_0_30px_rgba(168,85,247,0.4)]">
-                  Start Free Audit
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="tel:8077583921">
+                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-white text-black hover:bg-gray-100 font-bold">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call: 8077583921
                 </Button>
-              </Link>
-              <Link href="/contact">
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-2 border-primary/50 hover:bg-primary/10 font-semibold">
-                  Schedule a Call
+              </a>
+              <Link href="/audit">
+                <Button size="lg" variant="outline" className="h-16 px-10 text-lg rounded-full border-2 border-white/50 hover:bg-white/10 font-semibold">
+                  Get Free Audit
+                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
