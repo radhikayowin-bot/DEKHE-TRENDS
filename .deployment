@@ -1,0 +1,6 @@
+# Deployment Configuration
+# This file ensures the latest commit is deployed
+
+LAST_UPDATED=2025-01-20
+COMMIT_HASH=9967a5b
+STATUS=ready
