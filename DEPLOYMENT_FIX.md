@@ -10,14 +10,22 @@ Deployment is failing with: `Missing: bufferutil@4.1.0 from lock file`
 - bufferutil is now properly included as optional dependency
 
 ### 2. Created Deployment Configuration Files
-- `wrangler.toml` - Cloudflare Pages configuration
+- `wrangler.toml` - Cloudflare Pages configuration (FIXED syntax)
 - `.node-version` - Specifies Node.js 22.16.0
 - `.nvmrc` - Node version manager configuration
 - `.deployment` - Deployment marker file
 
 ### 3. Latest Commit
-- Commit hash: `91a3d79`
+- Commit hash: `05b8ba5`
+- Fixed wrangler.toml syntax error
 - Includes all optimizations + fixed package-lock.json
+
+### 4. wrangler.toml Configuration
+```toml
+name = "dekhe-trends"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist/public"
+```
 
 ## 🔧 Manual Steps (If Still Failing)
 
@@ -178,8 +186,8 @@ After successful deployment:
 
 ---
 
-**Latest Commit:** 91a3d79
-**Status:** Ready for deployment
+**Latest Commit:** 05b8ba5
+**Status:** Ready for deployment (wrangler.toml syntax fixed)
 **Node Version:** 22.16.0
 **Build Command:** npm run build
 **Output:** dist/public
