@@ -82,10 +82,10 @@ export default function BlogPost2() {
                 We ran a simple but practical test.
               </p>
               
-              <ul className="space-y-2 text-lg list-none ml-4">
-                <li>👉 Start with zero code</li>
-                <li>👉 Give AI a single idea</li>
-                <li>👉 Try to get a working website within 10 minutes</li>
+              <ul className="space-y-2 text-lg list-disc list-inside ml-4">
+                <li>Start with zero code</li>
+                <li>Give AI a single idea</li>
+                <li>Try to get a working website within 10 minutes</li>
               </ul>
               
               <div className="bg-primary/10 border-2 border-primary/30 rounded-2xl p-8 my-6">
@@ -100,9 +100,9 @@ export default function BlogPost2() {
                 </ul>
                 
                 <div className="mt-6 space-y-2 text-lg">
-                  <p>⏱ <strong>Time limit:</strong> 10 minutes</p>
-                  <p>💬 <strong>Prompts:</strong> Minimal (no over-explaining)</p>
-                  <p>❌ <strong>No manual coding allowed</strong></p>
+                  <p><strong>Time limit:</strong> 10 minutes</p>
+                  <p><strong>Prompts:</strong> Minimal (no over-explaining)</p>
+                  <p><strong>No manual coding allowed</strong></p>
                 </div>
               </div>
               
@@ -114,7 +114,7 @@ export default function BlogPost2() {
             {/* Section 2 */}
             <section className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-12">
-                🧠 Tools We Tested
+                Tools We Tested
               </h2>
               
               <p className="text-lg">
@@ -136,13 +136,13 @@ export default function BlogPost2() {
             {/* Section 3 */}
             <section className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-12">
-                ⚡ What Happened During the 10 Minutes
+                What Happened During the 10 Minutes
               </h2>
 
               {/* Minute 1-2 */}
               <div className="space-y-3 border-l-4 border-green-500/50 pl-6">
                 <h3 className="text-2xl font-bold font-display text-white">
-                  ⏱ Minute 1–2: Instant Setup
+                  Minute 1-2: Instant Setup
                 </h3>
                 
                 <p className="text-lg">The moment we gave the prompt:</p>
@@ -153,15 +153,14 @@ export default function BlogPost2() {
                 </ul>
                 
                 <p className="text-lg">
-                  👉 Cursor and Claude were fastest here<br />
-                  👉 Copilot needed more guidance
+                  Cursor and Claude were fastest here. Copilot needed more guidance.
                 </p>
               </div>
 
               {/* Minute 3-6 */}
               <div className="space-y-3 border-l-4 border-blue-500/50 pl-6">
                 <h3 className="text-2xl font-bold font-display text-white">
-                  ⏱ Minute 3–6: Website Takes Shape
+                  Minute 3-6: Website Takes Shape
                 </h3>
                 
                 <p className="text-lg">Now things got interesting:</p>
@@ -172,16 +171,14 @@ export default function BlogPost2() {
                 </ul>
                 
                 <p className="text-lg">
-                  👉 Cursor moved very fast<br />
-                  👉 Claude focused on structure + clarity<br />
-                  👉 Windsurf stayed stable
+                  Cursor moved very fast. Claude focused on structure and clarity. Windsurf stayed stable.
                 </p>
               </div>
 
               {/* Minute 7-10 */}
               <div className="space-y-3 border-l-4 border-primary/50 pl-6">
                 <h3 className="text-2xl font-bold font-display text-white">
-                  ⏱ Minute 7–10: Final Output
+                  Minute 7-10: Final Output
                 </h3>
                 
                 <p className="text-lg">By the end:</p>
@@ -200,14 +197,14 @@ export default function BlogPost2() {
             {/* Truth Section */}
             <div className="bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/40 rounded-2xl p-10 my-12">
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-6 text-white">
-                ❗ The Truth (No Hype)
+                The Truth (No Hype)
               </h2>
               
               <p className="text-lg mb-6">Let's be honest.</p>
               
               <div className="space-y-4 text-xl">
-                <p>👉 Did AI build a perfect website in 10 minutes? <span className="text-red-400 font-bold">❌ No</span></p>
-                <p>👉 Did AI build a usable website in 10 minutes? <span className="text-green-400 font-bold">✔ Yes</span></p>
+                <p>Did AI build a perfect website in 10 minutes? <span className="text-red-400 font-bold">No</span></p>
+                <p>Did AI build a usable website in 10 minutes? <span className="text-green-400 font-bold">Yes</span></p>
               </div>
               
               <p className="text-lg mt-6">
@@ -218,13 +215,13 @@ export default function BlogPost2() {
             {/* Section 4 */}
             <section className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-12">
-                🏆 Tool Performance Breakdown
+                Tool Performance Breakdown
               </h2>
 
               {/* Claude */}
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/50 rounded-2xl p-8 space-y-3">
                 <h3 className="text-2xl font-bold font-display text-white">
-                  🥇 Best Overall: Claude
+                  Best Overall: Claude
                 </h3>
                 
                 <p className="text-lg">
@@ -239,14 +236,14 @@ export default function BlogPost2() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Felt like working with a smart developer
+                  Felt like working with a smart developer
                 </p>
               </div>
 
               {/* Cursor */}
               <div className="space-y-3 border-l-4 border-blue-500/50 pl-6">
                 <h3 className="text-2xl font-bold font-display text-white">
-                  ⚡ Fastest: Cursor
+                  Fastest: Cursor
                 </h3>
                 
                 <p className="text-lg">Cursor was all about speed.</p>
@@ -258,14 +255,14 @@ export default function BlogPost2() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Perfect if you want quick results
+                  Perfect if you want quick results
                 </p>
               </div>
 
               {/* Windsurf */}
               <div className="space-y-3 border-l-4 border-cyan-500/50 pl-6">
                 <h3 className="text-2xl font-bold font-display text-white">
-                  ⚖️ Balanced: Windsurf
+                  Balanced: Windsurf
                 </h3>
                 
                 <ul className="space-y-1 text-lg list-disc list-inside ml-4">
@@ -275,14 +272,14 @@ export default function BlogPost2() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Not flashy, but solid
+                  Not flashy, but solid
                 </p>
               </div>
 
               {/* Copilot */}
               <div className="space-y-3 border-l-4 border-white/20 pl-6">
                 <h3 className="text-2xl font-bold font-display text-white">
-                  🧩 Familiar but Slower: GitHub Copilot
+                  Familiar but Slower: GitHub Copilot
                 </h3>
                 
                 <ul className="space-y-1 text-lg list-disc list-inside ml-4">
@@ -292,7 +289,7 @@ export default function BlogPost2() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Good assistant, not full vibe tool
+                  Good assistant, not full vibe tool
                 </p>
               </div>
             </section>
@@ -300,7 +297,7 @@ export default function BlogPost2() {
             {/* Ice Cream Moment */}
             <div className="bg-gradient-to-br from-accent/20 to-primary/20 border-2 border-accent/40 rounded-2xl p-10 my-12">
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-6 text-white">
-                🔥 The "Ice-Cream" Moment 🍦
+                The "Ice-Cream" Moment
               </h2>
               
               <p className="text-lg mb-4">Here's the part nobody talks about.</p>
@@ -316,7 +313,7 @@ export default function BlogPost2() {
               </ul>
               
               <p className="text-xl font-bold text-primary mb-4">
-                👉 That's the real magic.
+                That's the real magic.
               </p>
               
               <p className="text-lg">
@@ -331,7 +328,7 @@ export default function BlogPost2() {
             {/* What AI Did Well */}
             <section className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-12">
-                💡 What AI Did Really Well
+                What AI Did Really Well
               </h2>
               
               <p className="text-lg">AI was great at:</p>
@@ -345,14 +342,14 @@ export default function BlogPost2() {
               </ul>
               
               <p className="text-lg font-semibold text-primary">
-                👉 What normally takes hours… happened in minutes
+                What normally takes hours happened in minutes
               </p>
             </section>
 
             {/* Where AI Falls Short */}
             <section className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-12">
-                🚫 Where AI Still Falls Short
+                Where AI Still Falls Short
               </h2>
               
               <p className="text-lg">But it's not perfect yet.</p>
@@ -368,14 +365,14 @@ export default function BlogPost2() {
               </ul>
               
               <p className="text-lg font-semibold text-primary">
-                👉 You still need a human brain here
+                You still need a human brain here
               </p>
             </section>
 
             {/* Reality Check Table */}
             <div className="bg-card border border-white/10 rounded-2xl p-8 my-12">
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-8 text-white">
-                ⚖️ Final Reality Check
+                Final Reality Check
               </h2>
               
               <div className="space-y-4 text-lg">
@@ -385,19 +382,19 @@ export default function BlogPost2() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Speed</span>
-                  <span className="text-green-400">⚡ Excellent</span>
+                  <span className="text-green-400">Excellent</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Basic Website</span>
-                  <span className="text-green-400">✔ Achieved</span>
+                  <span className="text-green-400">Achieved</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Quality</span>
-                  <span className="text-blue-400">👍 Good</span>
+                  <span className="text-blue-400">Good</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Production Ready</span>
-                  <span className="text-red-400">❌ Not fully</span>
+                  <span className="text-red-400">Not fully</span>
                 </div>
               </div>
             </div>
@@ -405,7 +402,7 @@ export default function BlogPost2() {
             {/* Best Way to Use AI */}
             <section className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-12">
-                🎯 Best Way to Use AI (Real Strategy)
+                Best Way to Use AI (Real Strategy)
               </h2>
               
               <p className="text-lg">Don't expect AI to replace you.</p>
@@ -414,7 +411,7 @@ export default function BlogPost2() {
               
               <div className="grid md:grid-cols-2 gap-6 my-6">
                 <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
-                  <p className="text-lg font-semibold mb-3 text-primary">👉 Use AI for:</p>
+                  <p className="text-lg font-semibold mb-3 text-primary">Use AI for:</p>
                   <ul className="space-y-2 text-lg list-disc list-inside">
                     <li>First draft</li>
                     <li>Layout</li>
@@ -424,7 +421,7 @@ export default function BlogPost2() {
                 </div>
                 
                 <div className="bg-accent/10 border border-accent/30 rounded-xl p-6">
-                  <p className="text-lg font-semibold mb-3 text-accent">👉 Then you:</p>
+                  <p className="text-lg font-semibold mb-3 text-accent">Then you:</p>
                   <ul className="space-y-2 text-lg list-disc list-inside">
                     <li>Improve design</li>
                     <li>Add logic</li>
@@ -441,7 +438,7 @@ export default function BlogPost2() {
             {/* Future */}
             <section className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-12">
-                🔮 What's Coming Next
+                What's Coming Next
               </h2>
               
               <p className="text-lg">In the next few years:</p>
@@ -454,15 +451,15 @@ export default function BlogPost2() {
               </ul>
               
               <div className="mt-6 space-y-2 text-lg">
-                <p>👉 Developers won't disappear</p>
-                <p>👉 They'll become faster and smarter</p>
+                <p>Developers won't disappear</p>
+                <p>They'll become faster and smarter</p>
               </div>
             </section>
 
             {/* Final Verdict */}
             <div className="bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/50 rounded-2xl p-10 my-12">
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-6 text-white">
-                🏁 Final Verdict
+                Final Verdict
               </h2>
               
               <p className="text-xl mb-6">
@@ -470,12 +467,12 @@ export default function BlogPost2() {
               </p>
               
               <p className="text-2xl font-bold text-primary mb-4">
-                👉 Yes — but not perfectly
+                Yes — but not perfectly
               </p>
               
               <div className="space-y-3 text-lg">
-                <p>✓ AI gives you a strong starting point</p>
-                <p>✓ But not a finished product (yet)</p>
+                <p>AI gives you a strong starting point</p>
+                <p>But not a finished product (yet)</p>
               </div>
             </div>
 

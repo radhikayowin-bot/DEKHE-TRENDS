@@ -148,7 +148,7 @@ export default function BlogPost() {
               </ul>
               
               <p className="text-xl font-bold text-primary mb-3">
-                👉 Important rule: Don't look at price — look at cost of completing the task
+                Important rule: Don't look at price — look at cost of completing the task
               </p>
               
               <p className="text-lg">
@@ -184,7 +184,7 @@ export default function BlogPost() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Verdict: Good assistant, not the best vibe tool
+                  Verdict: Good assistant, not the best vibe tool
                 </p>
               </div>
 
@@ -211,7 +211,7 @@ export default function BlogPost() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Verdict: Best for speed and execution
+                  Verdict: Best for speed and execution
                 </p>
               </div>
 
@@ -237,7 +237,7 @@ export default function BlogPost() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Verdict: Balanced but not standout
+                  Verdict: Balanced but not standout
                 </p>
               </div>
 
@@ -263,7 +263,7 @@ export default function BlogPost() {
                 </p>
                 
                 <p className="text-xl font-bold text-primary">
-                  👉 Verdict: Best for deep vibe coding
+                  Verdict: Best for deep vibe coding
                 </p>
               </div>
 
@@ -290,7 +290,7 @@ export default function BlogPost() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Verdict: Only for advanced users
+                  Verdict: Only for advanced users
                 </p>
               </div>
 
@@ -308,7 +308,7 @@ export default function BlogPost() {
                 </ul>
                 
                 <p className="text-lg font-semibold text-primary">
-                  👉 Verdict: Not ready for serious workflow
+                  Verdict: Not ready for serious workflow
                 </p>
               </div>
             </section>
@@ -322,8 +322,8 @@ export default function BlogPost() {
               <p className="text-lg">This is where winners stand out.</p>
               
               <div className="space-y-3 text-lg">
-                <p><strong>Basic tools:</strong> ✔ Do what you ask</p>
-                <p><strong>Advanced tools:</strong> ✔ Do what you should have asked</p>
+                <p><strong>Basic tools:</strong> Do what you ask</p>
+                <p><strong>Advanced tools:</strong> Do what you should have asked</p>
               </div>
               
               <p className="text-lg font-semibold">Examples of advanced behavior:</p>
@@ -337,7 +337,7 @@ export default function BlogPost() {
               </ul>
               
               <p className="text-xl font-bold text-primary">
-                👉 That's true vibe coding
+                That's true vibe coding
               </p>
             </section>
 
@@ -348,12 +348,12 @@ export default function BlogPost() {
               </h2>
               
               <div className="space-y-4 text-2xl font-semibold text-center">
-                <p>🥇 <span className="text-primary">Claude</span></p>
-                <p>🥈 <span className="text-blue-400">Cursor</span></p>
-                <p>🥉 <span className="text-cyan-400">Windsurf</span></p>
-                <p className="text-xl">4️⃣ GitHub Copilot</p>
-                <p className="text-xl">5️⃣ Cline</p>
-                <p className="text-xl">6️⃣ RooCode</p>
+                <p><span className="text-primary">1. Claude</span></p>
+                <p><span className="text-blue-400">2. Cursor</span></p>
+                <p><span className="text-cyan-400">3. Windsurf</span></p>
+                <p className="text-xl">4. GitHub Copilot</p>
+                <p className="text-xl">5. Cline</p>
+                <p className="text-xl">6. RooCode</p>
               </div>
             </div>
 
@@ -434,13 +434,13 @@ export default function BlogPost() {
               </p>
               
               <p className="text-3xl font-bold text-primary mb-6">
-                👉 Claude (thinking) + Cursor (execution) is the strongest combo
+                Claude (thinking) + Cursor (execution) is the strongest combo
               </p>
               
               <p className="text-xl font-semibold">Because:</p>
               <ul className="space-y-2 text-xl mt-4">
-                <li>✓ Claude understands</li>
-                <li>✓ Cursor executes fast</li>
+                <li>Claude understands</li>
+                <li>Cursor executes fast</li>
               </ul>
             </div>
 
