@@ -18,8 +18,8 @@ router.get("/rss.xml", async (req, res) => {
         (post) => `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <link>https://dekhetrends.com/insights/${post.slug}</link>
-      <guid>https://dekhetrends.com/insights/${post.slug}</guid>
+      <link>https://dekhetrends.com/blog/${post.slug}</link>
+      <guid>https://dekhetrends.com/blog/${post.slug}</guid>
       <description><![CDATA[${post.excerpt || post.content.substring(0, 200)}]]></description>
       <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
       <author>dekhetrends@gmail.com (Dekhe Trends)</author>

@@ -10,7 +10,7 @@ export default function Sitemap() {
     { icon: Info, title: "About Us", path: "/about", description: "Learn about Dekhe Trends" },
     { icon: Briefcase, title: "Services", path: "/services", description: "Our digital marketing services" },
     { icon: Building2, title: "Industries", path: "/industries", description: "Industries we serve" },
-    { icon: FileText, title: "Insights", path: "/insights", description: "Blog and articles" },
+    { icon: FileText, title: "Blog", path: "/blog", description: "Blog and articles" },
     { icon: Award, title: "Free Audit", path: "/audit", description: "Get your free marketing audit" },
     { icon: Phone, title: "Contact", path: "/contact", description: "Get in touch with us" },
   ];

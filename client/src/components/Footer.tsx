@@ -59,7 +59,7 @@ export function Footer() {
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
               <li><Link href="/industries" className="hover:text-primary transition-colors">Portfolio</Link></li>
-              <li><Link href="/insights" className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
               <li><Link href="/audit" className="hover:text-primary transition-colors">Pricing</Link></li>
               <li><Link href="/about" className="hover:text-primary transition-colors">Our Team</Link></li>
               <li><Link href="/about" className="hover:text-primary transition-colors">Founder</Link></li>
@@ -124,9 +124,8 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center text-xs text-muted-foreground">
           <p>© 2025 Dekhe Trends. All rights reserved. Made with ❤️ in India 🇮🇳</p>
-          <p className="mt-2 md:mt-0">Empowering Indian Brands to Lead Global Markets</p>
         </div>
       </div>
     </footer>

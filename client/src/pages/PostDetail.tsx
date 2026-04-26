@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export default function PostDetail() {
-  const [, params] = useRoute("/insights/:slug");
+  const [, params] = useRoute("/blog/:slug");
   const slug = params?.slug || "";
   const { data: post, isLoading } = usePost(slug);
 
@@ -16,7 +16,7 @@ export default function PostDetail() {
     return (
       <div className="h-screen flex flex-col items-center justify-center space-y-4">
         <h2 className="text-2xl font-bold">Post not found</h2>
-        <Link href="/insights"><Button variant="outline">Back to Insights</Button></Link>
+        <Link href="/blog"><Button variant="outline">Back to Blog</Button></Link>
       </div>
     );
   }
@@ -24,8 +24,8 @@ export default function PostDetail() {
   return (
     <div className="pt-32 pb-24 min-h-screen">
       <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-        <Link href="/insights" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors">
-          <ArrowLeft className="mr-2 w-4 h-4" /> Back to Insights
+        <Link href="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors">
+          <ArrowLeft className="mr-2 w-4 h-4" /> Back to Blog
         </Link>
         
         <div className="space-y-6 mb-12">

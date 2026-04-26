@@ -63,7 +63,7 @@ export default function NotFound() {
                   Free Audit
                 </Button>
               </Link>
-              <Link href="/insights">
+              <Link href="/blog">
                 <Button variant="ghost" size="sm" className="hover:text-primary">
                   Blog
                 </Button>
