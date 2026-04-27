@@ -12,15 +12,17 @@ export default function Blog() {
       />
       
       <div className="pt-24 pb-12 min-h-screen">
-        <div className="container px-4 md:px-6">
-          <div className="mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold font-display mb-6">Our <span className="text-primary">Blog</span></h1>
-            <p className="text-xl text-muted-foreground max-w-2xl">
+        <div className="container px-4 md:px-6 lg:px-8">
+          <div className="mb-12 md:mb-16">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold font-display mb-4 md:mb-6">
+              Our <span className="text-primary">Blog</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
               Stay informed with our latest articles and insights.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Blog Post Card 1 */}
             <Link href="/blog/ai-build-website-10-minutes" className="group block h-full">
               <div className="bg-gradient-to-br from-card to-card/50 border border-accent/20 hover:border-primary/50 rounded-2xl overflow-hidden transition-all h-full flex flex-col">

@@ -11,20 +11,20 @@ export default function BlogPost2() {
         canonical="https://dekhetrends.com/blog/ai-build-website-10-minutes"
       />
       
-      <div className="pt-24 pb-12 min-h-screen bg-background">
-        <div className="container px-4 md:px-6 max-w-4xl mx-auto">
-          <Link href="/blog" className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors">
+      <div className="pt-20 md:pt-24 pb-12 min-h-screen bg-background">
+        <div className="container px-4 md:px-6 lg:px-8 max-w-4xl mx-auto">
+          <Link href="/blog" className="inline-flex items-center text-sm md:text-base text-muted-foreground hover:text-primary mb-6 md:mb-8 transition-colors">
             <ArrowLeft className="mr-2 w-4 h-4" /> Back to Blog
           </Link>
 
-          <article className="space-y-8">
+          <article className="space-y-6 md:space-y-8">
             {/* Header */}
-            <header className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight text-white">
+            <header className="space-y-4 md:space-y-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight text-white">
                 Can AI Build a Full Website in 10 Minutes? Real Test & Results
               </h1>
               
-              <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
                   <span>April 26, 2026</span>
@@ -38,14 +38,14 @@ export default function BlogPost2() {
               <img 
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" 
                 alt="AI Building Website"
-                className="w-full rounded-2xl border border-white/10 shadow-2xl"
+                className="w-full h-auto rounded-xl md:rounded-2xl border border-white/10 shadow-2xl"
                 loading="eager"
               />
             </header>
 
             {/* Introduction */}
-            <div className="space-y-4 text-lg leading-relaxed">
-              <p className="text-xl text-muted-foreground">
+            <div className="space-y-3 md:space-y-4 text-base md:text-lg leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground">
                 AI tools are getting insanely powerful in 2026.
               </p>
               
@@ -481,14 +481,14 @@ export default function BlogPost2() {
               <p className="text-lg text-muted-foreground">
                 Want to learn more about AI tools and digital marketing strategies?
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
                 <Link href="/blog">
-                  <button className="px-8 py-3 bg-primary/20 hover:bg-primary/30 rounded-lg transition-colors font-semibold">
+                  <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary/20 hover:bg-primary/30 rounded-lg transition-colors font-semibold text-sm md:text-base">
                     More Articles
                   </button>
                 </Link>
                 <Link href="/contact">
-                  <button className="px-8 py-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors font-semibold">
+                  <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors font-semibold text-sm md:text-base">
                     Contact Us
                   </button>
                 </Link>

@@ -135,3 +135,52 @@
     background-position: 100% 50%;
   }
 }
+
+/* Mobile Optimizations */
+@layer utilities {
+  /* Ensure touch targets are at least 44px */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Prevent horizontal scroll */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Better text rendering on mobile */
+  .text-optimize {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Responsive Container Improvements */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+  
+  /* Reduce spacing on mobile */
+  .section-spacing {
+    @apply py-12;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    @apply py-16;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    @apply py-20;
+  }
+}
