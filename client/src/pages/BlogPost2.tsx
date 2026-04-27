@@ -477,21 +477,68 @@ export default function BlogPost2() {
             </div>
 
             {/* CTA */}
-            <div className="border-t border-white/10 pt-12 mt-16 text-center space-y-6">
-              <p className="text-lg text-muted-foreground">
-                Want to learn more about AI tools and digital marketing strategies?
-              </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
-                <Link href="/blog">
-                  <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary/20 hover:bg-primary/30 rounded-lg transition-colors font-semibold text-sm md:text-base">
-                    More Articles
-                  </button>
-                </Link>
-                <Link href="/contact">
-                  <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors font-semibold text-sm md:text-base">
-                    Contact Us
-                  </button>
-                </Link>
+            <div className="border-t border-white/10 pt-12 mt-16">
+              {/* Author Section */}
+              <div className="glass-card p-8 rounded-2xl mb-12">
+                <div className="flex items-start gap-6">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center text-2xl font-bold flex-shrink-0">
+                    DT
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Dekhe Trends Team</h3>
+                    <p className="text-muted-foreground mb-4">
+                      We test, analyze, and review the latest AI tools and tech trends. Our mission is to provide honest, real-world insights that help developers and businesses make better decisions.
+                    </p>
+                    <Link href="/about">
+                      <span className="text-primary font-semibold hover:underline">Learn more about us →</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Related Articles */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold mb-6">Related Articles</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Link href="/blog/best-vibe-coding-tools-2026" className="group">
+                    <div className="glass-card p-6 rounded-xl hover:scale-[1.02] transition-all">
+                      <h4 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                        Best Vibe Coding Tools 2026 Compared
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Deep comparison of Claude, Cursor, Copilot & more
+                      </p>
+                    </div>
+                  </Link>
+                  <Link href="/services/content-marketing" className="group">
+                    <div className="glass-card p-6 rounded-xl hover:scale-[1.02] transition-all">
+                      <h4 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                        Content Marketing Services
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Create content that converts and ranks
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="text-center space-y-6">
+                <p className="text-lg text-muted-foreground">
+                  Want to learn more about AI tools and digital marketing strategies?
+                </p>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+                  <Link href="/blog">
+                    <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-primary/20 hover:bg-primary/30 rounded-lg transition-colors font-semibold text-sm md:text-base">
+                      More Articles
+                    </button>
+                  </Link>
+                  <Link href="/contact">
+                    <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-white/5 hover:bg-white/10 rounded-lg transition-colors font-semibold text-sm md:text-base">
+                      Contact Us
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </article>

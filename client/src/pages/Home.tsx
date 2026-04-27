@@ -282,6 +282,92 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Blog Section */}
+        <section className="py-20 px-4">
+          <div className="container max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                Latest <span className="gradient-text">Insights</span>
+              </h2>
+              <p className="text-xl text-[#B0B0B0] max-w-2xl mx-auto">
+                Real-world tests, honest reviews, and actionable insights on AI tools and tech trends
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {[
+                {
+                  slug: "ai-build-website-10-minutes",
+                  title: "Can AI Build a Full Website in 10 Minutes?",
+                  excerpt: "We tested if AI can actually build a full website in 10 minutes. Real experiment with honest results.",
+                  image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=450&fit=crop",
+                  date: "April 26, 2026",
+                  readTime: "8 min"
+                },
+                {
+                  slug: "best-vibe-coding-tools-2026",
+                  title: "Best Vibe Coding Tools 2026 Compared",
+                  excerpt: "Deep comparison of Claude, Cursor, GitHub Copilot, Windsurf, Cline & RooCode for developers.",
+                  image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*nOd4xby-JPQsQy-_",
+                  date: "April 26, 2026",
+                  readTime: "12 min"
+                }
+              ].map((post, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Link href={`/blog/${post.slug}`} className="group block">
+                    <div className="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-all card-glow">
+                      <div className="aspect-[16/9] relative overflow-hidden">
+                        <img 
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="p-8">
+                        <div className="flex items-center gap-4 text-sm text-[#B0B0B0] mb-4">
+                          <span>{post.date}</span>
+                          <span>•</span>
+                          <span>{post.readTime} read</span>
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4 group-hover:text-[#7B2FF7] transition-colors">
+                          {post.title}
+                        </h3>
+                        <p className="text-[#B0B0B0] mb-6 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                        <span className="text-[#00C6FF] font-semibold inline-flex items-center">
+                          Read Article <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link href="/blog">
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full border-white/10 hover:bg-white/5 transition-all duration-300">
+                  View All Articles
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="container max-w-7xl mx-auto">

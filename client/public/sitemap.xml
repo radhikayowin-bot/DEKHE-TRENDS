@@ -33,9 +33,24 @@
   
   <url>
     <loc>https://dekhetrends.com/blog</loc>
-    <lastmod>2025-01-20</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://dekhetrends.com/blog/best-vibe-coding-tools-2026</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dekhetrends.com/blog/ai-build-website-10-minutes</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <url>
