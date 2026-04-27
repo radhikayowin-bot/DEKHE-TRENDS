@@ -1,8 +1,15 @@
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
-import { ArrowLeft, Calendar, User } from "lucide-react";
+import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
+import { SocialShare } from "@/components/SocialShare";
+import { ArticleSchema } from "@/components/ArticleSchema";
+import { TableOfContents } from "@/components/TableOfContents";
+import { ReadingProgress } from "@/components/ReadingProgress";
+import { BlogComments } from "@/components/BlogComments";
 
 export default function BlogPost() {
+  const tags = ["AI", "Coding Tools", "Comparison", "Developer Tools", "Review", "Claude", "Cursor"];
+
   return (
     <>
       <SEO 
@@ -10,6 +17,19 @@ export default function BlogPost() {
         description="AI coding tools are changing the way developers build software. Compare Claude, Cursor, GitHub Copilot, Windsurf, Cline & RooCode to find the best vibe coding tool for your needs in 2026."
         canonical="https://dekhetrends.com/blog/best-vibe-coding-tools-2026"
       />
+      
+      <ArticleSchema
+        title="Best Vibe Coding Tools 2026: Claude, Cursor, Copilot, Windsurf, Cline & RooCode Compared"
+        description="AI coding tools are changing the way developers build software. Compare Claude, Cursor, GitHub Copilot, Windsurf, Cline & RooCode to find the best vibe coding tool for your needs in 2026."
+        image="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*nOd4xby-JPQsQy-_"
+        datePublished="2026-04-26"
+        dateModified="2026-04-26"
+        author="Dekhe Trends Team"
+        url="/blog/best-vibe-coding-tools-2026"
+      />
+
+      <ReadingProgress />
+      <TableOfContents />
       
       <div className="pt-20 md:pt-24 pb-12 min-h-screen bg-background">
         <div className="container px-4 md:px-6 lg:px-8 max-w-4xl mx-auto">
@@ -34,6 +54,26 @@ export default function BlogPost() {
                   <span>Dekhe Trends Team</span>
                 </div>
               </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center gap-1"
+                  >
+                    <Tag className="w-3 h-3" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Social Share */}
+              <SocialShare
+                url="/blog/best-vibe-coding-tools-2026"
+                title="Best Vibe Coding Tools 2026: Claude, Cursor, Copilot, Windsurf, Cline & RooCode Compared"
+                description="AI coding tools comparison - find the best vibe coding tool for your needs"
+              />
 
               <img 
                 src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*nOd4xby-JPQsQy-_" 
@@ -509,6 +549,13 @@ export default function BlogPost() {
                 </div>
               </div>
             </div>
+
+            {/* Comments Section */}
+            <BlogComments
+              url="/blog/best-vibe-coding-tools-2026"
+              identifier="best-vibe-coding-tools-2026"
+              title="Best Vibe Coding Tools 2026: Claude, Cursor, Copilot, Windsurf, Cline & RooCode Compared"
+            />
           </article>
         </div>
       </div>

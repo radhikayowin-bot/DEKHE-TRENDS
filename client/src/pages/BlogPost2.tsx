@@ -1,8 +1,15 @@
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
-import { ArrowLeft, Calendar, User } from "lucide-react";
+import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
+import { SocialShare } from "@/components/SocialShare";
+import { ArticleSchema } from "@/components/ArticleSchema";
+import { TableOfContents } from "@/components/TableOfContents";
+import { ReadingProgress } from "@/components/ReadingProgress";
+import { BlogComments } from "@/components/BlogComments";
 
 export default function BlogPost2() {
+  const tags = ["AI", "Web Development", "Testing", "Claude", "Cursor", "Copilot", "Windsurf"];
+
   return (
     <>
       <SEO 
@@ -10,6 +17,19 @@ export default function BlogPost2() {
         description="We tested if AI can actually build a full website in 10 minutes. Real experiment with Claude, Cursor, Copilot, and Windsurf. Here are the honest results."
         canonical="https://dekhetrends.com/blog/ai-build-website-10-minutes"
       />
+      
+      <ArticleSchema
+        title="Can AI Build a Full Website in 10 Minutes? Real Test & Results"
+        description="We tested if AI can actually build a full website in 10 minutes. Real experiment with Claude, Cursor, Copilot, and Windsurf. Here are the honest results."
+        image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop"
+        datePublished="2026-04-26"
+        dateModified="2026-04-26"
+        author="Dekhe Trends Team"
+        url="/blog/ai-build-website-10-minutes"
+      />
+
+      <ReadingProgress />
+      <TableOfContents />
       
       <div className="pt-20 md:pt-24 pb-12 min-h-screen bg-background">
         <div className="container px-4 md:px-6 lg:px-8 max-w-4xl mx-auto">
@@ -34,6 +54,26 @@ export default function BlogPost2() {
                   <span>Dekhe Trends Team</span>
                 </div>
               </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center gap-1"
+                  >
+                    <Tag className="w-3 h-3" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Social Share */}
+              <SocialShare
+                url="/blog/ai-build-website-10-minutes"
+                title="Can AI Build a Full Website in 10 Minutes? Real Test & Results"
+                description="Real experiment testing if AI can build a website in 10 minutes"
+              />
 
               <img 
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" 
@@ -541,6 +581,13 @@ export default function BlogPost2() {
                 </div>
               </div>
             </div>
+
+            {/* Comments Section */}
+            <BlogComments
+              url="/blog/ai-build-website-10-minutes"
+              identifier="ai-build-website-10-minutes"
+              title="Can AI Build a Full Website in 10 Minutes? Real Test & Results"
+            />
           </article>
         </div>
       </div>

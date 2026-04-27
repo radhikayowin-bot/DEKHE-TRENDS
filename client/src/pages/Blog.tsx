@@ -1,7 +1,9 @@
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
-import { Calendar, ArrowRight, TrendingUp, Code, Sparkles, Target } from "lucide-react";
+import { Calendar, ArrowRight, TrendingUp, Code, Sparkles, Target, Tag } from "lucide-react";
 import { motion } from "framer-motion";
+import { BlogSearch } from "@/components/BlogSearch";
+import { useState } from "react";
 
 const categories = [
   { name: "All", icon: Sparkles, active: true },
@@ -19,7 +21,8 @@ const blogPosts = [
     date: "April 26, 2026",
     category: "AI Tools",
     readTime: "8 min read",
-    featured: true
+    featured: true,
+    tags: ["AI", "Web Development", "Testing", "Claude", "Cursor"]
   },
   {
     slug: "best-vibe-coding-tools-2026",
@@ -29,11 +32,18 @@ const blogPosts = [
     date: "April 26, 2026",
     category: "AI Tools",
     readTime: "12 min read",
-    featured: true
+    featured: true,
+    tags: ["AI", "Coding Tools", "Comparison", "Developer Tools", "Review"]
   }
 ];
 
 export default function Blog() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredPosts = selectedCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
+
   return (
     <>
       <SEO 
@@ -53,9 +63,12 @@ export default function Blog() {
             <h1 className="text-5xl md:text-7xl font-bold font-display mb-6">
               Tech <span className="gradient-text">Insights</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12">
               Real-world tests, honest reviews, and actionable insights on AI tools, marketing, and tech trends.
             </p>
+
+            {/* Search Bar */}
+            <BlogSearch />
           </motion.div>
 
           {/* Categories */}
@@ -66,8 +79,9 @@ export default function Blog() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
+                onClick={() => setSelectedCategory(cat.name)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all ${
-                  cat.active 
+                  selectedCategory === cat.name
                     ? 'bg-gradient-to-r from-primary to-accent text-white' 
                     : 'bg-white/5 hover:bg-white/10 text-muted-foreground'
                 }`}
@@ -82,7 +96,7 @@ export default function Blog() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-8">Featured Articles</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {blogPosts.filter(post => post.featured).map((post, i) => (
+              {filteredPosts.filter(post => post.featured).map((post, i) => (
                 <motion.div
                   key={post.slug}
                   initial={{ opacity: 0, y: 20 }}
@@ -123,6 +137,18 @@ export default function Blog() {
                         <p className="text-muted-foreground line-clamp-3 mb-6 flex-grow leading-relaxed">
                           {post.excerpt}
                         </p>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {post.tags.slice(0, 3).map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-xs px-3 py-1 rounded-full bg-white/5 text-muted-foreground border border-white/10"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                         
                         <span className="text-sm font-semibold text-primary inline-flex items-center">
                           Read Full Article <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -164,7 +190,7 @@ export default function Blog() {
           <div>
             <h2 className="text-3xl font-bold mb-8">All Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post, i) => (
+              {filteredPosts.map((post, i) => (
                 <motion.div
                   key={post.slug}
                   initial={{ opacity: 0, y: 20 }}
@@ -196,6 +222,19 @@ export default function Blog() {
                         <p className="text-muted-foreground text-sm line-clamp-3 mb-4 flex-grow">
                           {post.excerpt}
                         </p>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {post.tags.slice(0, 2).map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-xs px-2 py-1 rounded-full bg-white/5 text-muted-foreground flex items-center gap-1"
+                            >
+                              <Tag className="w-3 h-3" />
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                         
                         <span className="text-sm font-semibold text-primary inline-flex items-center">
                           Read More <ArrowRight className="ml-2 w-4 h-4" />
