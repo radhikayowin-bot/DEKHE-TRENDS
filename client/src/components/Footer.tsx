@@ -85,14 +85,18 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Top Cities</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/mumbai" className="hover:text-primary transition-colors">Mumbai</Link></li>
-              <li><Link href="/delhi" className="hover:text-primary transition-colors">Delhi</Link></li>
-              <li><Link href="/bangalore" className="hover:text-primary transition-colors">Bangalore</Link></li>
-              <li><Link href="/hyderabad" className="hover:text-primary transition-colors">Hyderabad</Link></li>
-              <li><Link href="/chennai" className="hover:text-primary transition-colors">Chennai</Link></li>
-              <li><Link href="/pune" className="hover:text-primary transition-colors">Pune</Link></li>
-              <li><Link href="/kolkata" className="hover:text-primary transition-colors">Kolkata</Link></li>
-              <li><Link href="/ahmedabad" className="hover:text-primary transition-colors">Ahmedabad</Link></li>
+              <li><Link href="/digital-marketing-agency-mumbai" className="hover:text-primary transition-colors">Mumbai</Link></li>
+              <li><Link href="/digital-marketing-agency-delhi" className="hover:text-primary transition-colors">Delhi</Link></li>
+              <li><Link href="/digital-marketing-agency-bangalore" className="hover:text-primary transition-colors">Bangalore</Link></li>
+              <li><Link href="/digital-marketing-agency-hyderabad" className="hover:text-primary transition-colors">Hyderabad</Link></li>
+              <li><Link href="/digital-marketing-agency-chennai" className="hover:text-primary transition-colors">Chennai</Link></li>
+              <li><Link href="/digital-marketing-agency-pune" className="hover:text-primary transition-colors">Pune</Link></li>
+              <li><Link href="/digital-marketing-agency-kolkata" className="hover:text-primary transition-colors">Kolkata</Link></li>
+              <li><Link href="/digital-marketing-agency-ahmedabad" className="hover:text-primary transition-colors">Ahmedabad</Link></li>
+              <li><Link href="/digital-marketing-agency-jaipur" className="hover:text-primary transition-colors">Jaipur</Link></li>
+              <li><Link href="/digital-marketing-agency-surat" className="hover:text-primary transition-colors">Surat</Link></li>
+              <li><Link href="/digital-marketing-agency-lucknow" className="hover:text-primary transition-colors">Lucknow</Link></li>
+              <li><Link href="/digital-marketing-agency-indore" className="hover:text-primary transition-colors">Indore</Link></li>
             </ul>
           </div>
 
