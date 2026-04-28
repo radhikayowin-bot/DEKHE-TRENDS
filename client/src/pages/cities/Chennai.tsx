@@ -17,7 +17,7 @@ export default function Chennai() {
       <SEO 
         title="Digital Marketing Agency in Chennai | Grow Your Tamil Nadu Business Online"
         description="Chennai's leading digital marketing agency. We help Tamil Nadu businesses dominate their market with proven SEO, Google Ads, and social media strategies tailored for South Indian market."
-        canonical="https://dekhetrends.com/chennai"
+        canonical="https://dekhetrends.com/digital-marketing-agency-chennai"
       />
       
       <StickyCallButton />

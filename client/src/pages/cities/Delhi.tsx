@@ -18,7 +18,7 @@ export default function Delhi() {
       <SEO 
         title="Digital Marketing Agency in Delhi NCR | Grow Your Business Online"
         description="Delhi's most trusted digital marketing agency. We help businesses in Delhi, Noida, Gurgaon, and Faridabad dominate their market with proven SEO, ads, and social strategies."
-        canonical="https://dekhetrends.com/delhi"
+        canonical="https://dekhetrends.com/digital-marketing-agency-delhi"
       />
       
       <StickyCallButton />

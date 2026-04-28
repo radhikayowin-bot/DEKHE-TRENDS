@@ -138,7 +138,7 @@ export default function Kolkata() {
       <SEO 
         title="Digital Marketing Agency in Kolkata | Dekhe Trends Kolkata"
         description="Leading digital marketing agency in Kolkata offering SEO, social media, branding, and growth strategies. Serving Park Street, Salt Lake, New Town, and all Kolkata locations."
-        canonical="https://dekhetrends.com/kolkata"
+        canonical="https://dekhetrends.com/digital-marketing-agency-kolkata"
       />
 
       <div className="flex flex-col min-h-screen">

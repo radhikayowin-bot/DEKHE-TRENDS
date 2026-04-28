@@ -138,7 +138,7 @@ export default function Jaipur() {
       <SEO 
         title="Digital Marketing Agency in Jaipur | Dekhe Trends Jaipur"
         description="Leading digital marketing agency in Jaipur offering SEO, social media, branding, and growth strategies. Serving C-Scheme, Malviya Nagar, Vaishali Nagar, and all Jaipur locations."
-        canonical="https://dekhetrends.com/jaipur"
+        canonical="https://dekhetrends.com/digital-marketing-agency-jaipur"
       />
 
       <div className="flex flex-col min-h-screen">

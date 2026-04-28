@@ -17,7 +17,7 @@ export default function Pune() {
       <SEO 
         title="Digital Marketing Agency in Pune | Grow Your Maharashtra Business Online"
         description="Pune's fastest-growing digital marketing agency. We help Maharashtra businesses dominate their market with innovative SEO, Google Ads, and social media strategies."
-        canonical="https://dekhetrends.com/pune"
+        canonical="https://dekhetrends.com/digital-marketing-agency-pune"
       />
       
       <StickyCallButton />

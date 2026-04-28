@@ -17,7 +17,7 @@ export default function Mumbai() {
       <SEO 
         title="Digital Marketing Agency in Mumbai | Stop Losing to Your Competition"
         description="Mumbai moves fast. Your marketing needs to move faster. We help Mumbai businesses dominate their market with SEO, ads, and social media that actually works."
-        canonical="https://dekhetrends.com/mumbai"
+        canonical="https://dekhetrends.com/digital-marketing-agency-mumbai"
       />
       
       <StickyCallButton />

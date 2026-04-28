@@ -138,7 +138,7 @@ export default function Surat() {
       <SEO 
         title="Digital Marketing Agency in Surat | Dekhe Trends Surat"
         description="Leading digital marketing agency in Surat offering SEO, social media, branding, and growth strategies. Serving Adajan, Vesu, Varachha, and all Surat locations."
-        canonical="https://dekhetrends.com/surat"
+        canonical="https://dekhetrends.com/digital-marketing-agency-surat"
       />
 
       <div className="flex flex-col min-h-screen">

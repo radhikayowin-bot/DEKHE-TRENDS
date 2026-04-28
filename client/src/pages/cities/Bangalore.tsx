@@ -18,7 +18,7 @@ export default function Bangalore() {
       <SEO 
         title="Digital Marketing for Bangalore Startups & Tech Companies | Growth Focused"
         description="Bangalore's go-to digital marketing agency for startups, SaaS companies, and tech businesses. Data-driven strategies that scale with your growth."
-        canonical="https://dekhetrends.com/bangalore"
+        canonical="https://dekhetrends.com/digital-marketing-agency-bangalore"
       />
       
       <StickyCallButton />

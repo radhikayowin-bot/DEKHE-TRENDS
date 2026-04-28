@@ -17,7 +17,7 @@ export default function Ahmedabad() {
       <SEO 
         title="Digital Marketing Agency in Ahmedabad | Grow Your Gujarat Business Online"
         description="Ahmedabad's trusted digital marketing agency. We help Gujarat businesses dominate their market with proven SEO, Google Ads, and social media strategies that actually work."
-        canonical="https://dekhetrends.com/ahmedabad"
+        canonical="https://dekhetrends.com/digital-marketing-agency-ahmedabad"
       />
       
       <StickyCallButton />

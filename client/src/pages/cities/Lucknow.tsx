@@ -138,7 +138,7 @@ export default function Lucknow() {
       <SEO 
         title="Digital Marketing Agency in Lucknow | Dekhe Trends Lucknow"
         description="Leading digital marketing agency in Lucknow offering SEO, social media, branding, and growth strategies. Serving Hazratganj, Gomti Nagar, Alambagh, and all Lucknow locations."
-        canonical="https://dekhetrends.com/lucknow"
+        canonical="https://dekhetrends.com/digital-marketing-agency-lucknow"
       />
 
       <div className="flex flex-col min-h-screen">
