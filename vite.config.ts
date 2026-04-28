@@ -34,31 +34,81 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
-    // Performance optimizations
-    minify: 'esbuild', // Changed from terser to esbuild (faster and built-in)
+    minify: "esbuild",
+    target: "es2020",
+    sourcemap: false,
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split vendor chunks for better caching
-          'react-vendor': ['react', 'react-dom', 'react/jsx-runtime'],
-          'router': ['wouter'],
-          'ui': ['framer-motion', 'lucide-react'],
-          'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
+        // Granular code splitting for better caching
+        manualChunks(id) {
+          if (id.includes("node_modules/react") || id.includes("node_modules/react-dom")) {
+            return "react-core";
+          }
+          if (id.includes("node_modules/framer-motion")) {
+            return "framer-motion";
+          }
+          if (id.includes("node_modules/lucide-react")) {
+            return "lucide";
+          }
+          if (id.includes("node_modules/@radix-ui")) {
+            return "radix-ui";
+          }
+          if (id.includes("node_modules/wouter")) {
+            return "router";
+          }
+          if (id.includes("node_modules/@tanstack")) {
+            return "tanstack";
+          }
+          if (id.includes("node_modules/recharts") || id.includes("node_modules/d3")) {
+            return "charts";
+          }
+          if (id.includes("node_modules/zod") || id.includes("node_modules/react-hook-form")) {
+            return "forms";
+          }
+          if (id.includes("node_modules/")) {
+            return "vendor";
+          }
         },
+        // Better asset naming for caching
+        assetFileNames: "assets/[name]-[hash][extname]",
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
+      },
+      // Tree shake unused exports
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
       },
     },
-    chunkSizeWarningLimit: 1000,
-    cssCodeSplit: true,
-    sourcemap: false, // Disable sourcemaps in production for smaller files
+    // Compress assets
+    assetsInlineLimit: 4096, // Inline assets < 4kb as base64
   },
+  // Optimize dev server
   server: {
     fs: {
       strict: true,
       deny: ["**/.*"],
     },
   },
-  // Optimize dependencies
+  // Pre-bundle heavy deps for faster dev
   optimizeDeps: {
-    include: ['react', 'react-dom', 'wouter', 'framer-motion'],
+    include: [
+      "react",
+      "react-dom",
+      "react/jsx-runtime",
+      "wouter",
+      "framer-motion",
+      "lucide-react",
+      "@tanstack/react-query",
+    ],
+    exclude: ["@replit/vite-plugin-cartographer"],
+  },
+  // Enable esbuild optimizations
+  esbuild: {
+    drop: ["console", "debugger"], // Remove console.log in production
+    legalComments: "none",
+    treeShaking: true,
   },
 });
