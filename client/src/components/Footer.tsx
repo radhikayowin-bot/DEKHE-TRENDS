@@ -1,135 +1,138 @@
 import { Link } from "wouter";
-import { Zap, Twitter, Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { TrendingUp, Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-white/10 pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <Zap className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold font-display">
-                Dekhe<span className="text-primary">Trends</span>
+    <footer className="bg-slate-900 text-slate-300">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-lg font-bold text-white">
+                Dekhe<span className="text-blue-400">Trends</span>
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              India's leading digital marketing agency. Helping businesses grow across 20+ major cities.
+            <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-xs">
+              India's trusted digital marketing agency helping businesses grow with SEO, paid ads, social media, and content marketing.
             </p>
-            
-            <div className="mt-6">
-              <h4 className="font-bold text-white mb-3 text-sm">Contact Us</h4>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Email</p>
-                    <a href="mailto:dekhetrends@gmail.com" className="text-white hover:text-primary transition-colors font-medium">
-                      dekhetrends@gmail.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Phone</p>
-                    <a href="tel:+918077583921" className="text-white hover:text-primary transition-colors font-medium">
-                      +91 80775 83921
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Address</p>
-                    <p className="text-white font-medium">
-                      Bareilly, Uttar Pradesh<br />
-                      India - 243001
-                    </p>
-                  </div>
-                </div>
+            <div className="space-y-3 text-sm">
+              <a href="mailto:dekhetrends@gmail.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                dekhetrends@gmail.com
+              </a>
+              <a href="tel:+918077583921" className="flex items-center gap-3 hover:text-white transition-colors">
+                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                +91 80775 83921
+              </a>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <span>Bareilly, Uttar Pradesh, India - 243001</span>
               </div>
             </div>
           </div>
-          
+
+          {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
-              <li><Link href="/industries" className="hover:text-primary transition-colors">Portfolio</Link></li>
-              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link href="/audit" className="hover:text-primary transition-colors">Pricing</Link></li>
-              <li><Link href="/about" className="hover:text-primary transition-colors">Our Team</Link></li>
-              <li><Link href="/about" className="hover:text-primary transition-colors">Founder</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About Us" },
+                { href: "/services", label: "Services" },
+                { href: "/blog", label: "Blog" },
+                { href: "/contact", label: "Contact" },
+                { href: "/audit", label: "Free Audit" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white transition-colors">{l.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Services */}
           <div>
-            <h4 className="font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/services/seo-strategy" className="hover:text-primary transition-colors">SEO Services</Link></li>
-              <li><Link href="/services/social-media-strategy" className="hover:text-primary transition-colors">Social Media</Link></li>
-              <li><Link href="/services/paid-advertising" className="hover:text-primary transition-colors">Paid Advertising</Link></li>
-              <li><Link href="/services/content-marketing" className="hover:text-primary transition-colors">Content Marketing</Link></li>
-              <li><Link href="/services/brand-strategy" className="hover:text-primary transition-colors">Brand Strategy</Link></li>
-              <li><Link href="/services/email-marketing" className="hover:text-primary transition-colors">Email Marketing</Link></li>
-              <li><Link href="/services/video-marketing" className="hover:text-primary transition-colors">Video Marketing</Link></li>
-              <li><Link href="/services/influencer-marketing" className="hover:text-primary transition-colors">Influencer Marketing</Link></li>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Services</h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: "/services/seo-strategy", label: "SEO Services" },
+                { href: "/services/paid-advertising", label: "Paid Advertising" },
+                { href: "/services/social-media-strategy", label: "Social Media" },
+                { href: "/services/content-marketing", label: "Content Marketing" },
+                { href: "/services/brand-strategy", label: "Brand Strategy" },
+                { href: "/services/email-marketing", label: "Email Marketing" },
+                { href: "/services/video-marketing", label: "Video Marketing" },
+                { href: "/services/influencer-marketing", label: "Influencer Marketing" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white transition-colors">{l.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Cities + Legal */}
           <div>
-            <h4 className="font-bold mb-4">Top Cities</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/digital-marketing-agency-mumbai" className="hover:text-primary transition-colors">Mumbai</Link></li>
-              <li><Link href="/digital-marketing-agency-delhi" className="hover:text-primary transition-colors">Delhi</Link></li>
-              <li><Link href="/digital-marketing-agency-bangalore" className="hover:text-primary transition-colors">Bangalore</Link></li>
-              <li><Link href="/digital-marketing-agency-hyderabad" className="hover:text-primary transition-colors">Hyderabad</Link></li>
-              <li><Link href="/digital-marketing-agency-chennai" className="hover:text-primary transition-colors">Chennai</Link></li>
-              <li><Link href="/digital-marketing-agency-pune" className="hover:text-primary transition-colors">Pune</Link></li>
-              <li><Link href="/digital-marketing-agency-kolkata" className="hover:text-primary transition-colors">Kolkata</Link></li>
-              <li><Link href="/digital-marketing-agency-ahmedabad" className="hover:text-primary transition-colors">Ahmedabad</Link></li>
-              <li><Link href="/digital-marketing-agency-jaipur" className="hover:text-primary transition-colors">Jaipur</Link></li>
-              <li><Link href="/digital-marketing-agency-surat" className="hover:text-primary transition-colors">Surat</Link></li>
-              <li><Link href="/digital-marketing-agency-lucknow" className="hover:text-primary transition-colors">Lucknow</Link></li>
-              <li><Link href="/digital-marketing-agency-indore" className="hover:text-primary transition-colors">Indore</Link></li>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Top Cities</h4>
+            <ul className="space-y-2 text-sm mb-6">
+              {[
+                { href: "/digital-marketing-agency-mumbai", label: "Mumbai" },
+                { href: "/digital-marketing-agency-delhi", label: "Delhi" },
+                { href: "/digital-marketing-agency-bangalore", label: "Bangalore" },
+                { href: "/digital-marketing-agency-hyderabad", label: "Hyderabad" },
+                { href: "/digital-marketing-agency-chennai", label: "Chennai" },
+                { href: "/digital-marketing-agency-pune", label: "Pune" },
+                { href: "/digital-marketing-agency-kolkata", label: "Kolkata" },
+                { href: "/digital-marketing-agency-ahmedabad", label: "Ahmedabad" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white transition-colors">{l.label}</Link>
+                </li>
+              ))}
             </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link></li>
-              <li><Link href="/disclaimer" className="hover:text-primary transition-colors">Disclaimer</Link></li>
-              <li><Link href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</Link></li>
-              <li><Link href="/refund-policy" className="hover:text-primary transition-colors">Refund Policy</Link></li>
-              <li><Link href="/sitemap" className="hover:text-primary transition-colors">Sitemap</Link></li>
+            <h4 className="text-white font-semibold mb-3 text-sm uppercase tracking-wider">Legal</h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: "/privacy-policy", label: "Privacy Policy" },
+                { href: "/disclaimer", label: "Disclaimer" },
+                { href: "/cookie-policy", label: "Cookie Policy" },
+                { href: "/refund-policy", label: "Refund Policy" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-white transition-colors">{l.label}</Link>
+                </li>
+              ))}
             </ul>
-            <h4 className="font-bold mb-4">Connect</h4>
-            <div className="flex flex-wrap gap-3">
-              <a href="https://twitter.com/dekhetrends" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-colors" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com/company/dekhetrends" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://instagram.com/dekhetrends" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-colors" aria-label="Instagram">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://www.youtube.com/@Dekhetrends" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-colors" aria-label="YouTube">
-                <Youtube className="w-5 h-5" />
-              </a>
-            </div>
           </div>
         </div>
-        
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center text-xs text-muted-foreground">
-          <p>© 2025 Dekhe Trends. All rights reserved. Made with ❤️ in India 🇮🇳</p>
+
+        {/* Bottom */}
+        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-slate-500">© 2026 Dekhe Trends. All rights reserved. Made with ❤️ in India 🇮🇳</p>
+          <div className="flex gap-4">
+            {[
+              { href: "https://twitter.com/dekhetrends", icon: Twitter, label: "Twitter" },
+              { href: "https://linkedin.com/company/dekhetrends", icon: Linkedin, label: "LinkedIn" },
+              { href: "https://instagram.com/dekhetrends", icon: Instagram, label: "Instagram" },
+              { href: "https://www.youtube.com/@Dekhetrends", icon: Youtube, label: "YouTube" },
+            ].map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-8 h-8 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
+              >
+                <s.icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
