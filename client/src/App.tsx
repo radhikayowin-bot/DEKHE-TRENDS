@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+﻿import { Switch, Route } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
@@ -6,7 +6,7 @@ import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
 import { CookieConsent } from "./components/CookieConsent";
 import { StickyCallButton } from "./components/StickyCallButton";
-import { PerformanceMonitor } from "./components/PerformanceMonitor";
+import { ScrollToTop } from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -25,6 +25,7 @@ import BrandStrategy from "./pages/services/BrandStrategy";
 import CommunityBuilding from "./pages/services/CommunityBuilding";
 import CompetitorIntelligence from "./pages/services/CompetitorIntelligence";
 import ContentMarketing from "./pages/services/ContentMarketing";
+import EmailMarketing from "./pages/services/EmailMarketing";
 import InfluencerMarketing from "./pages/services/InfluencerMarketing";
 import MarketResearch from "./pages/services/MarketResearch";
 import PaidAdvertising from "./pages/services/PaidAdvertising";
@@ -37,6 +38,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-background text-foreground">
+        <ScrollToTop />
         <Navigation />
         <Switch>
           <Route path="/" component={Home} />
@@ -87,7 +89,7 @@ function App() {
         <Footer />
         <StickyCallButton />
         <CookieConsent />
-        <PerformanceMonitor />
+        
         <Toaster />
       </div>
     </QueryClientProvider>
