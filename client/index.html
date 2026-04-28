@@ -9,13 +9,19 @@
     })(window,document,'script','dataLayer','GTM-WM52KLKC');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-673NZGTHCZ"></script>
+    <!-- Google tag (gtag.js) - deferred -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-673NZGTHCZ');
+      gtag('config', 'G-673NZGTHCZ', { 'send_page_view': false });
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-673NZGTHCZ';
+        document.head.appendChild(s);
+        gtag('event', 'page_view');
+      });
     </script>
     
     <meta charset="UTF-8" />
@@ -68,8 +74,16 @@
     <meta name="theme-color" content="#8b5cf6" />
     <meta name="msapplication-TileColor" content="#8b5cf6" />
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2749932241825231" crossorigin="anonymous"></script>
+    <!-- Google AdSense - deferred -->
+    <script>
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2749932241825231';
+        s.crossOrigin = 'anonymous';
+        document.head.appendChild(s);
+      });
+    </script>
     
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
@@ -191,7 +205,8 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

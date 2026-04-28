@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { Link } from "wouter";
+﻿import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { StickyCallButton } from "@/components/StickyCallButton";
@@ -22,16 +21,11 @@ export default function Home() {
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-          {/* Background Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#7B2FF7]/20 to-[#00C6FF]/20 rounded-full blur-3xl" />
+          {/* Background Glow - simplified, no blur-3xl on mobile */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#7B2FF7]/10 to-[#00C6FF]/10 rounded-full hidden md:block" style={{filter: 'blur(80px)'}} />
           
           <div className="container max-w-7xl mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center max-w-5xl mx-auto"
-            >
+            <div className="text-center max-w-5xl mx-auto">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
                 <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
@@ -81,7 +75,7 @@ export default function Home() {
                   <span>Money-back Guarantee</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
         {/* Stats Section */}
@@ -90,22 +84,18 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { number: "500+", label: "Active Clients", icon: Users },
-                { number: "₹50Cr+", label: "Revenue Generated", icon: TrendingUp },
+                { number: "â‚¹50Cr+", label: "Revenue Generated", icon: TrendingUp },
                 { number: "4.9/5", label: "Client Rating", icon: Star },
                 { number: "60", label: "Days to Results", icon: Zap }
               ].map((stat, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-card p-8 rounded-2xl text-center hover:scale-105 transition-transform duration-300 card-glow"
+                  className="glass-card p-8 rounded-2xl text-center card-glow"
                 >
                   <stat.icon className="w-8 h-8 mx-auto mb-4 text-[#7B2FF7]" />
                   <div className="text-4xl md:text-5xl font-bold mb-2 gradient-text">{stat.number}</div>
                   <div className="text-sm text-[#B0B0B0]">{stat.label}</div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -114,11 +104,7 @@ export default function Home() {
         {/* Services Section */}
         <section className="py-20 px-4">
           <div className="container max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
+            <div className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
                 Services That <span className="gradient-text">Drive Growth</span>
@@ -126,7 +112,7 @@ export default function Home() {
               <p className="text-xl text-[#B0B0B0] max-w-2xl mx-auto">
                 Comprehensive digital marketing solutions tailored to your business goals
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -149,13 +135,7 @@ export default function Home() {
                   features: ["Content Creation", "Community Management", "Influencer Marketing"]
                 }
               ].map((service, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="gradient-border group cursor-pointer"
+                <div className="gradient-border group cursor-pointer"
                 >
                   <div className="p-8 h-full hover:bg-white/[0.02] transition-all duration-300">
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-r from-[#7B2FF7] to-[#00C6FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -172,7 +152,7 @@ export default function Home() {
                       ))}
                     </ul>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -180,11 +160,7 @@ export default function Home() {
         {/* Process Section */}
         <section className="py-20 px-4">
           <div className="container max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
+            <div className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
                 Our <span className="gradient-text">Proven Process</span>
@@ -192,7 +168,7 @@ export default function Home() {
               <p className="text-xl text-[#B0B0B0] max-w-2xl mx-auto">
                 A systematic approach to scaling your business online
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-4 gap-6">
               {[
@@ -201,13 +177,7 @@ export default function Home() {
                 { step: "03", title: "Execute", desc: "Implementation with precision" },
                 { step: "04", title: "Scale", desc: "Optimize and grow what works" }
               ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-card p-8 rounded-2xl text-center relative overflow-hidden group"
+                <div className="glass-card p-8 rounded-2xl text-center relative overflow-hidden group"
                 >
                   <div className="absolute top-0 right-0 text-8xl font-bold text-white/[0.02] group-hover:text-white/[0.05] transition-colors duration-300">
                     {item.step}
@@ -217,7 +187,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
                     <p className="text-[#B0B0B0]">{item.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -226,16 +196,12 @@ export default function Home() {
         {/* Testimonials Section */}
         <section className="py-20 px-4">
           <div className="container max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
+            <div className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
                 Trusted by <span className="gradient-text">Industry Leaders</span>
               </h2>
-            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -248,7 +214,7 @@ export default function Home() {
                 {
                   name: "Priya Sharma",
                   role: "Founder, StyleHub",
-                  feedback: "From ₹2L to ₹18L monthly revenue. Their strategies actually work.",
+                  feedback: "From â‚¹2L to â‚¹18L monthly revenue. Their strategies actually work.",
                   rating: 5
                 },
                 {
@@ -258,13 +224,7 @@ export default function Home() {
                   rating: 5
                 }
               ].map((testimonial, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="glass-card p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
+                <div className="glass-card p-8 rounded-2xl hover:scale-105 transition-transform duration-300"
                 >
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, j) => (
@@ -276,7 +236,7 @@ export default function Home() {
                     <div className="font-bold">{testimonial.name}</div>
                     <div className="text-sm text-[#B0B0B0]">{testimonial.role}</div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -285,11 +245,7 @@ export default function Home() {
         {/* Blog Section */}
         <section className="py-20 px-4">
           <div className="container max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
+            <div className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6">
                 Latest <span className="gradient-text">Insights</span>
@@ -297,7 +253,7 @@ export default function Home() {
               <p className="text-xl text-[#B0B0B0] max-w-2xl mx-auto">
                 Real-world tests, honest reviews, and actionable insights on AI tools and tech trends
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {[
@@ -338,7 +294,7 @@ export default function Home() {
                       <div className="p-8">
                         <div className="flex items-center gap-4 text-sm text-[#B0B0B0] mb-4">
                           <span>{post.date}</span>
-                          <span>•</span>
+                          <span>â€¢</span>
                           <span>{post.readTime} read</span>
                         </div>
                         <h3 className="text-2xl font-bold mb-4 group-hover:text-[#7B2FF7] transition-colors">
@@ -353,7 +309,7 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -371,11 +327,7 @@ export default function Home() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="container max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="glass-card p-12 md:p-16 rounded-3xl text-center relative overflow-hidden"
+            <div className="glass-card p-12 md:p-16 rounded-3xl text-center relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#7B2FF7]/10 to-[#00C6FF]/10" />
               <div className="relative z-10">
@@ -392,7 +344,7 @@ export default function Home() {
                   </Button>
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>
