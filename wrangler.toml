@@ -2,3 +2,8 @@
 name = "dekhe-trends"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "dist/public"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
