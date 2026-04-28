@@ -1,71 +1,51 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 
-// Store scroll positions per route in sessionStorage
 const SCROLL_KEY = "scroll_positions";
 
-function getScrollPositions(): Record<string, number> {
+function saveScrollPosition(path: string) {
   try {
-    return JSON.parse(sessionStorage.getItem(SCROLL_KEY) || "{}");
-  } catch {
-    return {};
-  }
-}
-
-function saveScrollPosition(path: string, y: number) {
-  try {
-    const positions = getScrollPositions();
-    positions[path] = y;
+    const positions = JSON.parse(sessionStorage.getItem(SCROLL_KEY) || "{}");
+    positions[path] = window.scrollY;
     sessionStorage.setItem(SCROLL_KEY, JSON.stringify(positions));
-  } catch {
-    // sessionStorage not available
-  }
+  } catch {}
 }
 
-function getScrollPosition(path: string): number {
-  return getScrollPositions()[path] ?? 0;
+function restoreScrollPosition(path: string) {
+  try {
+    const positions = JSON.parse(sessionStorage.getItem(SCROLL_KEY) || "{}");
+    return positions[path] ?? 0;
+  } catch {
+    return 0;
+  }
 }
 
 export function ScrollToTop() {
   const [pathname] = useLocation();
-  const prevPathname = useRef<string>(pathname);
-  const isPopState = useRef<boolean>(false);
+  const prevPath = useRef<string>("");
+  const isBack = useRef<boolean>(false);
 
-  // Detect browser back/forward navigation
   useEffect(() => {
-    const handlePopState = () => {
-      isPopState.current = true;
-    };
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
+    const onPopState = () => { isBack.current = true; };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  // Save scroll position on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      saveScrollPosition(pathname, window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+    // Save previous page scroll before leaving
+    if (prevPath.current && prevPath.current !== pathname) {
+      saveScrollPosition(prevPath.current);
+    }
 
-  // Handle route changes
-  useEffect(() => {
-    if (prevPathname.current === pathname) return;
-
-    if (isPopState.current) {
-      // Back/forward: restore saved position
-      const savedY = getScrollPosition(pathname);
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: savedY, behavior: "instant" });
-      });
-      isPopState.current = false;
+    if (isBack.current) {
+      const y = restoreScrollPosition(pathname);
+      window.scrollTo({ top: y, behavior: "instant" });
+      isBack.current = false;
     } else {
-      // New navigation: scroll to top
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
 
-    prevPathname.current = pathname;
+    prevPath.current = pathname;
   }, [pathname]);
 
   return null;
