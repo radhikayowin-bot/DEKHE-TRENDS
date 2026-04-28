@@ -78,8 +78,7 @@ export default defineConfig({
       },
       // Tree shake unused exports
       treeshake: {
-        moduleSideEffects: false,
-        propertyReadSideEffects: false,
+        moduleSideEffects: "no-external",
       },
     },
     // Compress assets
@@ -107,8 +106,6 @@ export default defineConfig({
   },
   // Enable esbuild optimizations
   esbuild: {
-    drop: ["console", "debugger"], // Remove console.log in production
     legalComments: "none",
-    treeShaking: true,
   },
 });
