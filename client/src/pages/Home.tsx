@@ -274,13 +274,7 @@ export default function Home() {
                   readTime: "12 min"
                 }
               ].map((post, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                >
+                <div key={i}>
                   <Link href={`/blog/${post.slug}`} className="group block">
                     <div className="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-all card-glow">
                       <div className="aspect-[16/9] relative overflow-hidden">
@@ -294,7 +288,7 @@ export default function Home() {
                       <div className="p-8">
                         <div className="flex items-center gap-4 text-sm text-[#B0B0B0] mb-4">
                           <span>{post.date}</span>
-                          <span>â€¢</span>
+                          <span>•</span>
                           <span>{post.readTime} read</span>
                         </div>
                         <h3 className="text-2xl font-bold mb-4 group-hover:text-[#7B2FF7] transition-colors">
