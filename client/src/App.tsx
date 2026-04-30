@@ -1,4 +1,4 @@
-﻿import { Switch, Route } from "wouter";
+import { Switch, Route } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogPost2 from "./pages/BlogPost2";
+import BlogPost3 from "./pages/BlogPost3";
 import Services from "./pages/Services";
 import Industries from "./pages/Industries";
 import Audit from "./pages/Audit";
@@ -48,6 +49,7 @@ function App() {
           <Route path="/blog" component={Blog} />
           <Route path="/blog/best-vibe-coding-tools-2026" component={BlogPost} />
           <Route path="/blog/ai-build-website-10-minutes" component={BlogPost2} />
+          <Route path="/blog/build-mobile-apps-with-ai-2026" component={BlogPost3} />
           <Route path="/industries" component={Industries} />
           <Route path="/audit" component={Audit} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
@@ -58,6 +60,7 @@ function App() {
           <Route path="/services/community-building" component={CommunityBuilding} />
           <Route path="/services/competitor-intelligence" component={CompetitorIntelligence} />
           <Route path="/services/content-marketing" component={ContentMarketing} />
+          <Route path="/services/email-marketing" component={EmailMarketing} />
           <Route path="/services/influencer-marketing" component={InfluencerMarketing} />
           <Route path="/services/market-research" component={MarketResearch} />
           <Route path="/services/paid-advertising" component={PaidAdvertising} />
@@ -89,7 +92,6 @@ function App() {
         <Footer />
         <StickyCallButton />
         <CookieConsent />
-        
         <Toaster />
       </div>
     </QueryClientProvider>
