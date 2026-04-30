@@ -14,6 +14,17 @@ const categories = [
 
 const blogPosts = [
   {
+    slug: "build-mobile-apps-with-ai-2026",
+    title: "How to Build Mobile Apps with AI in 2026 — From Idea to Live MVP in a Day",
+    excerpt: "In 2026, you can go from idea to working mobile app to real users in a single day. Here's the exact process — build, demo, distribute, and improve using AI.",
+    image: "https://i.postimg.cc/1zd9m8KK/Chat-GPT-Image-Apr-30-2026-05-29-55-PM-(1).png",
+    date: "April 30, 2026",
+    category: "AI Tools",
+    readTime: "15 min read",
+    featured: true,
+    tags: ["Mobile Apps", "AI Development", "MVP", "Claude Code"]
+  },
+  {
     slug: "ai-build-website-10-minutes",
     title: "Can AI Build a Full Website in 10 Minutes? Real Test & Results",
     excerpt: "We tested if AI can actually build a full website in 10 minutes. Real experiment with Claude, Cursor, Copilot, and Windsurf. Here are the honest results.",
@@ -28,7 +39,7 @@ const blogPosts = [
     slug: "best-vibe-coding-tools-2026",
     title: "Best Vibe Coding Tools 2026: Claude, Cursor, Copilot, Windsurf, Cline & RooCode Compared",
     excerpt: "AI coding tools are changing the way developers build software. Compare Claude, Cursor, GitHub Copilot, Windsurf, Cline & RooCode to find the best vibe coding tool for your needs.",
-    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*nOd4xby-JPQsQy-_",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop",
     date: "April 26, 2026",
     category: "AI Tools",
     readTime: "12 min read",
